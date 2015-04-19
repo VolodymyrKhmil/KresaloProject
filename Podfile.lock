@@ -1,0 +1,16 @@
+PODS:
+  - FXKeychain (1.5.2)
+  - JSONModel (1.0.2)
+  - OAuthConsumer (1.0.3)
+
+DEPENDENCIES:
+  - FXKeychain
+  - JSONModel
+  - OAuthConsumer
+
+SPEC CHECKSUMS:
+  FXKeychain: 1a711bddc04a2bd69850dcfe297b8a43027a9980
+  JSONModel: 6ffcb4ffa3659c9e9a2e5d45d6c7705bab187c03
+  OAuthConsumer: 9e99725d1d58d076ed13e6010a2d74f82e25e4cc
+
+COCOAPODS: 0.36.0

@@ -1,0 +1,1018 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		031D837255E1343C74D43720 /* NSString+URLEncoding.h in Headers */ = {isa = PBXBuildFile; fileRef = 84FBCCFAF66CC121B73ACC0C /* NSString+URLEncoding.h */; };
+		04D7B81870678299F0521384 /* hmac.c in Sources */ = {isa = PBXBuildFile; fileRef = EAA6FCB52434ED33444B3A2B /* hmac.c */; };
+		0AE9E8DE0DFB497690E6F5EC /* JSONModelLib.h in Headers */ = {isa = PBXBuildFile; fileRef = F432221FAFCE1EE7AF8421B7 /* JSONModelLib.h */; };
+		0D0BA07B4B2152C8DBC14858 /* OACall.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A1A8073E99C55F796817A92 /* OACall.h */; };
+		125C95CC02CFD30AB1C4A93E /* OAAttachment.h in Headers */ = {isa = PBXBuildFile; fileRef = 681C4BD7DDEDBF9E0AD992F0 /* OAAttachment.h */; };
+		13349B7B409558EB18776266 /* NSArray+JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDE98162EFB6788E30670FA /* NSArray+JSONModel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		1535830039B29DB841AAFA7E /* OAuthConsumer.podspec in Sources */ = {isa = PBXBuildFile; fileRef = AE229BB3AA1F7BB19C547677 /* OAuthConsumer.podspec */; };
+		15F123036886D71986DCD2E4 /* JSONModelClassProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 0CA06DAA5ADD4DEE32B30FCA /* JSONModelClassProperty.h */; };
+		17FBE2586396A4255BC30842 /* OAAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = C08A961E3EF34A620D41B24B /* OAAttachment.m */; };
+		1B3AED45345851D75CBDBDB1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9A1D84A626A0016D6639B3 /* Foundation.framework */; };
+		1D0F42C6C283249440D3CBED /* OATokenManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EA154DE4F3F2FDBA5B1E4B5B /* OATokenManager.m */; };
+		1F7F4FC03826FE3D1278FB3F /* JSONModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 166E16D0E44E6D6CE19EA772 /* JSONModel.h */; };
+		203F28F2631A68BBA256422E /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = DC14308FCBEEBA8795E5D6CE /* JSONModelError.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		226FD696B52A359789643C7A /* LICENSE in Sources */ = {isa = PBXBuildFile; fileRef = A1AA826741261732DFF0508B /* LICENSE */; };
+		2A5A3D8218E124D121A0F1E0 /* OAProblem.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DC7A44370735E96F03D101C /* OAProblem.h */; };
+		2AD46965297A82D1E5785DC8 /* OARequestParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = A0E8C6FC6058F7334A7BB1F1 /* OARequestParameter.m */; };
+		340E66B27EDEC042F6F76FC7 /* JSONModelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 06437224747765CE88768473 /* JSONModelArray.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		34BF2D215FDE0F6E0A409774 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2723007957A7E822A43536F1 /* JSONValueTransformer.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		366B577460C6A76ECEBCA814 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9A1D84A626A0016D6639B3 /* Foundation.framework */; };
+		42A9B11854E63FDE4FB74F8F /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2575A27648EF9FABE4E0E8 /* JSONKeyMapper.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		5689E17CB01C414227905BBB /* NSMutableURLRequest+Parameters.h in Headers */ = {isa = PBXBuildFile; fileRef = 7428700B6ECA0761E1EAADDC /* NSMutableURLRequest+Parameters.h */; };
+		582FCF444EBB647A71A88537 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 721E3DEEBE06E295C3DC7907 /* Base64Transcoder.c */; };
+		5D08D08FEFFC4F33B5BDAB84 /* JSONKeyMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E3E8AA88F458722A00C928A /* JSONKeyMapper.h */; };
+		5D58C15B7D97A6357BE4C60E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9A1D84A626A0016D6639B3 /* Foundation.framework */; };
+		601F087C58422B3520527C84 /* OAConsumer.m in Sources */ = {isa = PBXBuildFile; fileRef = 858E58AAD8EBDB29E2D49F15 /* OAConsumer.m */; };
+		61B877194834F5B898C5AD10 /* OAMutableURLRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = B75E32B84D8EF52A61B5B7C8 /* OAMutableURLRequest.m */; };
+		6249A6A188C7BAC08C47E564 /* OACall.m in Sources */ = {isa = PBXBuildFile; fileRef = 552D6B7DCE73EC337C3EDB58 /* OACall.m */; };
+		662AE467BCEE3C40026869F6 /* NSURL+Base.m in Sources */ = {isa = PBXBuildFile; fileRef = 9058107D9FFCA0298F37E552 /* NSURL+Base.m */; };
+		6D318872D4407B539CAFF012 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B022E81BD47D17C0D6F8ADE /* Security.framework */; };
+		7418D99D6122EA2FE99943F3 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DCE57F9805B26A3D8C4EAFD /* JSONModelClassProperty.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		74E8D9037F52E69D245E24B5 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 777EDF22310249C81DB0B18E /* JSONModel.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		76E7ECDB72EECF444BAAA620 /* OAProblem.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2C680DAC536F604B78415C /* OAProblem.m */; };
+		84A1F08AC92F8D6D807AF72B /* JSONModel+networking.h in Headers */ = {isa = PBXBuildFile; fileRef = 97B2ECC0E95D444E8C3F7354 /* JSONModel+networking.h */; };
+		8A59F479C4E7B5F80B5C78EC /* FXKeychain.h in Headers */ = {isa = PBXBuildFile; fileRef = 40ABF58B60BA818A00661F78 /* FXKeychain.h */; };
+		8B3C9CBF0657726EAE01F216 /* sha1.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F3EC396CD950CA2BE241E00 /* sha1.h */; };
+		8C02CC7486E874542FE1EC01 /* sha1.c in Sources */ = {isa = PBXBuildFile; fileRef = 89441031A29DF030D21249AA /* sha1.c */; };
+		8D2A344369988F19A9ABE336 /* OADataFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 10AAF5E449384D5A9CD9B5FD /* OADataFetcher.m */; };
+		92730820C42D4EA3B3731BB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9A1D84A626A0016D6639B3 /* Foundation.framework */; };
+		9831E8A51350F03B1F4A420B /* OAServiceTicket.h in Headers */ = {isa = PBXBuildFile; fileRef = ACFC9BE420429CBA2A8BC9EB /* OAServiceTicket.h */; };
+		99A56596875B222229F37672 /* Pods-FXKeychain-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F5209DE2E47C28098D255AA /* Pods-FXKeychain-dummy.m */; };
+		9AC39D6F6A419D90858E72C4 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E309F800C16CFB5174B874A /* Pods-dummy.m */; };
+		9DDA5426581C19BBE8EBC1C0 /* OAHMAC_SHA1SignatureProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FE7CF931021DC639C19C1D8 /* OAHMAC_SHA1SignatureProvider.h */; };
+		9E7B1BFD6DE0D964A667B6C1 /* OAPlaintextSignatureProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 389C6AB448103431832B012E /* OAPlaintextSignatureProvider.h */; };
+		A4A6227D72F339938C4ECDF1 /* OAToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 0CA3C357B26F687885974051 /* OAToken.m */; };
+		AA5C549B5552118C9E516D8A /* OARequestParameter.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F50DAD3022CFE9F3060E320 /* OARequestParameter.h */; };
+		AA897593347454AF826687A3 /* OADataFetcher.h in Headers */ = {isa = PBXBuildFile; fileRef = BCA8CF3D2F38C758D96947F4 /* OADataFetcher.h */; };
+		B133383DFCD1C18B77A8BE0C /* NSArray+JSONModel.h in Headers */ = {isa = PBXBuildFile; fileRef = E2DC73DC1F78D0196DA202EB /* NSArray+JSONModel.h */; };
+		B34EEE86199ABC75460CC92B /* JSONHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A999E3D8343C26D21961B1AD /* JSONHTTPClient.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		B551891CC3D269D20DBBDA56 /* JSONModel+networking.m in Sources */ = {isa = PBXBuildFile; fileRef = FA2AC24DF5105CC5205AB1A5 /* JSONModel+networking.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		B9AA7CFD8A79555C2C32757C /* NSString+URLEncoding.m in Sources */ = {isa = PBXBuildFile; fileRef = 08777E17DC76C7D2277ABAA0 /* NSString+URLEncoding.m */; };
+		BB38AD59D498A4424F6CC5E7 /* hmac.h in Headers */ = {isa = PBXBuildFile; fileRef = 33E6F85C42F63872357F6679 /* hmac.h */; };
+		BB47A3ABECAEA66676961A13 /* OAToken.h in Headers */ = {isa = PBXBuildFile; fileRef = 55E4005DD40CF568993A5782 /* OAToken.h */; };
+		BEAC862CE9A04D6F85FD0C21 /* JSONModelArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 99C88424DC649F1590D56BD1 /* JSONModelArray.h */; };
+		C0285788205AC0C2D0D085CB /* JSONModelError.h in Headers */ = {isa = PBXBuildFile; fileRef = CA7F9871207EE37B802EBF22 /* JSONModelError.h */; };
+		C50BD9C1DF3EB5184699AE95 /* OAPlaintextSignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = F4D3D4A8AAF364BE7DB5659C /* OAPlaintextSignatureProvider.m */; };
+		C8A8CD170756C66B43910F8E /* JSONAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = D42FAD562DF865E6E923D1B9 /* JSONAPI.h */; };
+		CD67B68079C012A8FDA4F5E7 /* FXKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = B1462F5C33850A90E96373EA /* FXKeychain.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		DC23E6DCD2BE3A4E39B7E9C8 /* NSURL+Base.h in Headers */ = {isa = PBXBuildFile; fileRef = F2F05AA36BB4162DAA137152 /* NSURL+Base.h */; };
+		DCCDDCFAA12058D6450C34B2 /* Pods-JSONModel-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B270064BD9044371D55F7BD5 /* Pods-JSONModel-dummy.m */; };
+		DE576D6839AB901C6E71BD0F /* JSONValueTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 5A5C630BBB9820778FFA5068 /* JSONValueTransformer.h */; };
+		DE93BDE02C0703F308519364 /* JSONHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 1BBAF18C452FBB1CA86CD6B5 /* JSONHTTPClient.h */; };
+		E6032512D40197EA08521848 /* Pods-OAuthConsumer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C9164D05FC888A86773A9F1 /* Pods-OAuthConsumer-dummy.m */; };
+		E68673200661116CC20B5213 /* JSONAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 88DE6D20C1D7F278890BD6A1 /* JSONAPI.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
+		E702AE3A70F60848F21B7BD4 /* OAMutableURLRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F2A50945C4CDC2189E2D521 /* OAMutableURLRequest.h */; };
+		EC9786D810F47FA24FC9426A /* OATokenManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B8CD084FCCDA78719E45E0A /* OATokenManager.h */; };
+		ECB49C97C7F95C3AF38E1990 /* OAServiceTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = 31CAA4757823CAEE9BDF4B3A /* OAServiceTicket.m */; };
+		EF2E607C0A428C8973815275 /* NSMutableURLRequest+Parameters.m in Sources */ = {isa = PBXBuildFile; fileRef = E71CFBEEC973008F5AACE09C /* NSMutableURLRequest+Parameters.m */; };
+		EFE777729695FC6BB189B744 /* OASignatureProviding.h in Headers */ = {isa = PBXBuildFile; fileRef = 606465EC4A19FD35C23BF519 /* OASignatureProviding.h */; };
+		F18357F6450698BBE30BB44A /* OAHMAC_SHA1SignatureProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B6D558472549D2E9F65BBAE /* OAHMAC_SHA1SignatureProvider.m */; };
+		F599FCFA83D748CBB4E081F1 /* Base64Transcoder.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F918081054DE9847F143913 /* Base64Transcoder.h */; };
+		FC3D478A18F2A997F4D6742D /* OAuthConsumer.h in Headers */ = {isa = PBXBuildFile; fileRef = 117ED5213A7C639AF5DCC894 /* OAuthConsumer.h */; };
+		FFDC5DD85A7564FD08042E33 /* OAConsumer.h in Headers */ = {isa = PBXBuildFile; fileRef = 1827E6AD9FEA460C977194F9 /* OAConsumer.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		19020ED6698033F25ECF2C04 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84C6B2EBA62BF2395D173631 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 713607BD3254A98AAD6EC3B0;
+			remoteInfo = "Pods-OAuthConsumer-OAuthConsumer";
+		};
+		4C16AB27AC44E5116AB6BDA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84C6B2EBA62BF2395D173631 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CFCCCF6CE5163108EF41846A;
+			remoteInfo = "Pods-OAuthConsumer";
+		};
+		80613F781B95752C86AE3ACA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84C6B2EBA62BF2395D173631 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3C0C90E763D3CFBE53AA594;
+			remoteInfo = "Pods-FXKeychain";
+		};
+		D674A7810341585D016E9018 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84C6B2EBA62BF2395D173631 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0B1F405465C6C35010A6FF16;
+			remoteInfo = "Pods-JSONModel";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		06437224747765CE88768473 /* JSONModelArray.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModelArray.m; path = JSONModel/JSONModel/JSONModelArray.m; sourceTree = "<group>"; };
+		06FAC2249735D975222B2300 /* Pods-FXKeychain.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FXKeychain.xcconfig"; sourceTree = "<group>"; };
+		08777E17DC76C7D2277ABAA0 /* NSString+URLEncoding.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+URLEncoding.m"; path = "Classes/NSString+URLEncoding.m"; sourceTree = "<group>"; };
+		0B8CD084FCCDA78719E45E0A /* OATokenManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OATokenManager.h; path = Classes/OATokenManager.h; sourceTree = "<group>"; };
+		0C9164D05FC888A86773A9F1 /* Pods-OAuthConsumer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-OAuthConsumer-dummy.m"; sourceTree = "<group>"; };
+		0CA06DAA5ADD4DEE32B30FCA /* JSONModelClassProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModelClassProperty.h; path = JSONModel/JSONModel/JSONModelClassProperty.h; sourceTree = "<group>"; };
+		0CA3C357B26F687885974051 /* OAToken.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OAToken.m; path = Classes/OAToken.m; sourceTree = "<group>"; };
+		0D8B6D0ED5E48660F0D0A8D2 /* libPods-OAuthConsumer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OAuthConsumer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E2884D86D36C6ABE48908E9 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
+		0E3E8AA88F458722A00C928A /* JSONKeyMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONKeyMapper.h; path = JSONModel/JSONModelTransformations/JSONKeyMapper.h; sourceTree = "<group>"; };
+		10AAF5E449384D5A9CD9B5FD /* OADataFetcher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OADataFetcher.m; path = Classes/OADataFetcher.m; sourceTree = "<group>"; };
+		117ED5213A7C639AF5DCC894 /* OAuthConsumer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OAuthConsumer.h; path = Classes/OAuthConsumer.h; sourceTree = "<group>"; };
+		166E16D0E44E6D6CE19EA772 /* JSONModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModel.h; path = JSONModel/JSONModel/JSONModel.h; sourceTree = "<group>"; };
+		1827E6AD9FEA460C977194F9 /* OAConsumer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OAConsumer.h; path = Classes/OAConsumer.h; sourceTree = "<group>"; };
+		1BBAF18C452FBB1CA86CD6B5 /* JSONHTTPClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONHTTPClient.h; path = JSONModel/JSONModelNetworking/JSONHTTPClient.h; sourceTree = "<group>"; };
+		1E309F800C16CFB5174B874A /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
+		218D10C542AC34F92CDF9466 /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		2723007957A7E822A43536F1 /* JSONValueTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONValueTransformer.m; path = JSONModel/JSONModelTransformations/JSONValueTransformer.m; sourceTree = "<group>"; };
+		2747114D57931A94DD368014 /* Pods-OAuthConsumer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-OAuthConsumer-prefix.pch"; sourceTree = "<group>"; };
+		31CAA4757823CAEE9BDF4B3A /* OAServiceTicket.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OAServiceTicket.m; path = Classes/OAServiceTicket.m; sourceTree = "<group>"; };
+		33E6F85C42F63872357F6679 /* hmac.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = hmac.h; path = Classes/hmac.h; sourceTree = "<group>"; };
+		389C6AB448103431832B012E /* OAPlaintextSignatureProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OAPlaintextSignatureProvider.h; path = Classes/OAPlaintextSignatureProvider.h; sourceTree = "<group>"; };
+		40ABF58B60BA818A00661F78 /* FXKeychain.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FXKeychain.h; path = FXKeychain/FXKeychain.h; sourceTree = "<group>"; };
+		45ACCA567B362C741D367B47 /* Pods-FXKeychain-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-FXKeychain-Private.xcconfig"; sourceTree = "<group>"; };
+		4662FA3C8510061D85426030 /* Pods-OAuthConsumer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OAuthConsumer.xcconfig"; sourceTree = "<group>"; };
+		4A1A8073E99C55F796817A92 /* OACall.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OACall.h; path = Classes/OACall.h; sourceTree = "<group>"; };
+		4E9A1D84A626A0016D6639B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		4F2A50945C4CDC2189E2D521 /* OAMutableURLRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OAMutableURLRequest.h; path = Classes/OAMutableURLRequest.h; sourceTree = "<group>"; };
+		4F50DAD3022CFE9F3060E320 /* OARequestParameter.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OARequestParameter.h; path = Classes/OARequestParameter.h; sourceTree = "<group>"; };
+		4F918081054DE9847F143913 /* Base64Transcoder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Base64Transcoder.h; path = Classes/Base64Transcoder.h; sourceTree = "<group>"; };
+		552D6B7DCE73EC337C3EDB58 /* OACall.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OACall.m; path = Classes/OACall.m; sourceTree = "<group>"; };
+		55E4005DD40CF568993A5782 /* OAToken.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OAToken.h; path = Classes/OAToken.h; sourceTree = "<group>"; };
+		59F09C41AA3848A8981698EA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
+		5A5C630BBB9820778FFA5068 /* JSONValueTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONValueTransformer.h; path = JSONModel/JSONModelTransformations/JSONValueTransformer.h; sourceTree = "<group>"; };
+		5DC7A44370735E96F03D101C /* OAProblem.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OAProblem.h; path = Classes/OAProblem.h; sourceTree = "<group>"; };
+		5DCE57F9805B26A3D8C4EAFD /* JSONModelClassProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModelClassProperty.m; path = JSONModel/JSONModel/JSONModelClassProperty.m; sourceTree = "<group>"; };
+		5F3EC396CD950CA2BE241E00 /* sha1.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = sha1.h; path = Classes/sha1.h; sourceTree = "<group>"; };
+		606465EC4A19FD35C23BF519 /* OASignatureProviding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OASignatureProviding.h; path = Classes/OASignatureProviding.h; sourceTree = "<group>"; };
+		681C4BD7DDEDBF9E0AD992F0 /* OAAttachment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OAAttachment.h; path = Classes/OAAttachment.h; sourceTree = "<group>"; };
+		6B022E81BD47D17C0D6F8ADE /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		6F5209DE2E47C28098D255AA /* Pods-FXKeychain-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-FXKeychain-dummy.m"; sourceTree = "<group>"; };
+		6FE7CF931021DC639C19C1D8 /* OAHMAC_SHA1SignatureProvider.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OAHMAC_SHA1SignatureProvider.h; path = Classes/OAHMAC_SHA1SignatureProvider.h; sourceTree = "<group>"; };
+		721E3DEEBE06E295C3DC7907 /* Base64Transcoder.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = Base64Transcoder.c; path = Classes/Base64Transcoder.c; sourceTree = "<group>"; };
+		7428700B6ECA0761E1EAADDC /* NSMutableURLRequest+Parameters.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSMutableURLRequest+Parameters.h"; path = "Classes/NSMutableURLRequest+Parameters.h"; sourceTree = "<group>"; };
+		749391CB18502FBFFDE13DA6 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = "<group>"; };
+		777EDF22310249C81DB0B18E /* JSONModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModel.m; path = JSONModel/JSONModel/JSONModel.m; sourceTree = "<group>"; };
+		7C48AE347357C0B12E041490 /* Pods-JSONModel.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JSONModel.xcconfig"; sourceTree = "<group>"; };
+		84FBCCFAF66CC121B73ACC0C /* NSString+URLEncoding.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+URLEncoding.h"; path = "Classes/NSString+URLEncoding.h"; sourceTree = "<group>"; };
+		858E58AAD8EBDB29E2D49F15 /* OAConsumer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OAConsumer.m; path = Classes/OAConsumer.m; sourceTree = "<group>"; };
+		88DE6D20C1D7F278890BD6A1 /* JSONAPI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONAPI.m; path = JSONModel/JSONModelNetworking/JSONAPI.m; sourceTree = "<group>"; };
+		89441031A29DF030D21249AA /* sha1.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = sha1.c; path = Classes/sha1.c; sourceTree = "<group>"; };
+		8B6D558472549D2E9F65BBAE /* OAHMAC_SHA1SignatureProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OAHMAC_SHA1SignatureProvider.m; path = Classes/OAHMAC_SHA1SignatureProvider.m; sourceTree = "<group>"; };
+		9058107D9FFCA0298F37E552 /* NSURL+Base.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURL+Base.m"; path = "Classes/NSURL+Base.m"; sourceTree = "<group>"; };
+		97B2ECC0E95D444E8C3F7354 /* JSONModel+networking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "JSONModel+networking.h"; path = "JSONModel/JSONModelNetworking/JSONModel+networking.h"; sourceTree = "<group>"; };
+		9988ADAD7283409F2520FAAE /* OAuthConsumer.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OAuthConsumer.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		99C88424DC649F1590D56BD1 /* JSONModelArray.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModelArray.h; path = JSONModel/JSONModel/JSONModelArray.h; sourceTree = "<group>"; };
+		9F1203F4736330295B596760 /* libPods-JSONModel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JSONModel.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0E8C6FC6058F7334A7BB1F1 /* OARequestParameter.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OARequestParameter.m; path = Classes/OARequestParameter.m; sourceTree = "<group>"; };
+		A128C2DB1DAC7B004A362F17 /* Pods-FXKeychain-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-FXKeychain-prefix.pch"; sourceTree = "<group>"; };
+		A1AA826741261732DFF0508B /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = Classes/LICENSE; sourceTree = "<group>"; };
+		A999E3D8343C26D21961B1AD /* JSONHTTPClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONHTTPClient.m; path = JSONModel/JSONModelNetworking/JSONHTTPClient.m; sourceTree = "<group>"; };
+		ACFC9BE420429CBA2A8BC9EB /* OAServiceTicket.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OAServiceTicket.h; path = Classes/OAServiceTicket.h; sourceTree = "<group>"; };
+		AE229BB3AA1F7BB19C547677 /* OAuthConsumer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = OAuthConsumer.podspec; path = Classes/OAuthConsumer.podspec; sourceTree = "<group>"; };
+		B1462F5C33850A90E96373EA /* FXKeychain.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = FXKeychain.m; path = FXKeychain/FXKeychain.m; sourceTree = "<group>"; };
+		B270064BD9044371D55F7BD5 /* Pods-JSONModel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-JSONModel-dummy.m"; sourceTree = "<group>"; };
+		B75E32B84D8EF52A61B5B7C8 /* OAMutableURLRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OAMutableURLRequest.m; path = Classes/OAMutableURLRequest.m; sourceTree = "<group>"; };
+		BB2575A27648EF9FABE4E0E8 /* JSONKeyMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONKeyMapper.m; path = JSONModel/JSONModelTransformations/JSONKeyMapper.m; sourceTree = "<group>"; };
+		BCA8CF3D2F38C758D96947F4 /* OADataFetcher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OADataFetcher.h; path = Classes/OADataFetcher.h; sourceTree = "<group>"; };
+		BEDE98162EFB6788E30670FA /* NSArray+JSONModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+JSONModel.m"; path = "JSONModel/JSONModelCategories/NSArray+JSONModel.m"; sourceTree = "<group>"; };
+		C08A961E3EF34A620D41B24B /* OAAttachment.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OAAttachment.m; path = Classes/OAAttachment.m; sourceTree = "<group>"; };
+		C818016C7CE57E0EFAFA4E5C /* Pods-JSONModel-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-JSONModel-Private.xcconfig"; sourceTree = "<group>"; };
+		CA7F9871207EE37B802EBF22 /* JSONModelError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModelError.h; path = JSONModel/JSONModel/JSONModelError.h; sourceTree = "<group>"; };
+		CB2C680DAC536F604B78415C /* OAProblem.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OAProblem.m; path = Classes/OAProblem.m; sourceTree = "<group>"; };
+		D1502A903F02F34DE072D5C6 /* libPods-FXKeychain.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-FXKeychain.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D42FAD562DF865E6E923D1B9 /* JSONAPI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONAPI.h; path = JSONModel/JSONModelNetworking/JSONAPI.h; sourceTree = "<group>"; };
+		DC14308FCBEEBA8795E5D6CE /* JSONModelError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JSONModelError.m; path = JSONModel/JSONModel/JSONModelError.m; sourceTree = "<group>"; };
+		E074091FA3F1165CD8347F2B /* Pods-JSONModel-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-JSONModel-prefix.pch"; sourceTree = "<group>"; };
+		E2DC73DC1F78D0196DA202EB /* NSArray+JSONModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+JSONModel.h"; path = "JSONModel/JSONModelCategories/NSArray+JSONModel.h"; sourceTree = "<group>"; };
+		E70DEA5874D9D67535CCDC5F /* Pods-OAuthConsumer-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-OAuthConsumer-Private.xcconfig"; sourceTree = "<group>"; };
+		E71CFBEEC973008F5AACE09C /* NSMutableURLRequest+Parameters.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSMutableURLRequest+Parameters.m"; path = "Classes/NSMutableURLRequest+Parameters.m"; sourceTree = "<group>"; };
+		EA154DE4F3F2FDBA5B1E4B5B /* OATokenManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OATokenManager.m; path = Classes/OATokenManager.m; sourceTree = "<group>"; };
+		EAA6FCB52434ED33444B3A2B /* hmac.c */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.c; name = hmac.c; path = Classes/hmac.c; sourceTree = "<group>"; };
+		F125238262569EFDA1555BE4 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		F13D3EBBF9EB6A9BFD610F62 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2F05AA36BB4162DAA137152 /* NSURL+Base.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURL+Base.h"; path = "Classes/NSURL+Base.h"; sourceTree = "<group>"; };
+		F432221FAFCE1EE7AF8421B7 /* JSONModelLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JSONModelLib.h; path = JSONModel/JSONModelLib.h; sourceTree = "<group>"; };
+		F4D3D4A8AAF364BE7DB5659C /* OAPlaintextSignatureProvider.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OAPlaintextSignatureProvider.m; path = Classes/OAPlaintextSignatureProvider.m; sourceTree = "<group>"; };
+		F6CA4EBC60CFCA1C1B3744FA /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		F8F0F4216C82F0484ABEF39B /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		FA2AC24DF5105CC5205AB1A5 /* JSONModel+networking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "JSONModel+networking.m"; path = "JSONModel/JSONModelNetworking/JSONModel+networking.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		026BFD1BDD35BEB825D22A20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5D58C15B7D97A6357BE4C60E /* Foundation.framework in Frameworks */,
+				6D318872D4407B539CAFF012 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B17D889ECCF9CFFCC3C657A0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				92730820C42D4EA3B3731BB7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9ADF5F4BC48BA8B4B310BBA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F0D0335D633E37319C6A069B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1B3AED45345851D75CBDBDB1 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F878CCD40515D4CC11341097 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				366B577460C6A76ECEBCA814 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		217EAD6FD83CFE7831518F94 /* OAuthConsumer */ = {
+			isa = PBXGroup;
+			children = (
+				721E3DEEBE06E295C3DC7907 /* Base64Transcoder.c */,
+				4F918081054DE9847F143913 /* Base64Transcoder.h */,
+				A1AA826741261732DFF0508B /* LICENSE */,
+				7428700B6ECA0761E1EAADDC /* NSMutableURLRequest+Parameters.h */,
+				E71CFBEEC973008F5AACE09C /* NSMutableURLRequest+Parameters.m */,
+				84FBCCFAF66CC121B73ACC0C /* NSString+URLEncoding.h */,
+				08777E17DC76C7D2277ABAA0 /* NSString+URLEncoding.m */,
+				F2F05AA36BB4162DAA137152 /* NSURL+Base.h */,
+				9058107D9FFCA0298F37E552 /* NSURL+Base.m */,
+				681C4BD7DDEDBF9E0AD992F0 /* OAAttachment.h */,
+				C08A961E3EF34A620D41B24B /* OAAttachment.m */,
+				4A1A8073E99C55F796817A92 /* OACall.h */,
+				552D6B7DCE73EC337C3EDB58 /* OACall.m */,
+				1827E6AD9FEA460C977194F9 /* OAConsumer.h */,
+				858E58AAD8EBDB29E2D49F15 /* OAConsumer.m */,
+				BCA8CF3D2F38C758D96947F4 /* OADataFetcher.h */,
+				10AAF5E449384D5A9CD9B5FD /* OADataFetcher.m */,
+				6FE7CF931021DC639C19C1D8 /* OAHMAC_SHA1SignatureProvider.h */,
+				8B6D558472549D2E9F65BBAE /* OAHMAC_SHA1SignatureProvider.m */,
+				4F2A50945C4CDC2189E2D521 /* OAMutableURLRequest.h */,
+				B75E32B84D8EF52A61B5B7C8 /* OAMutableURLRequest.m */,
+				389C6AB448103431832B012E /* OAPlaintextSignatureProvider.h */,
+				F4D3D4A8AAF364BE7DB5659C /* OAPlaintextSignatureProvider.m */,
+				5DC7A44370735E96F03D101C /* OAProblem.h */,
+				CB2C680DAC536F604B78415C /* OAProblem.m */,
+				4F50DAD3022CFE9F3060E320 /* OARequestParameter.h */,
+				A0E8C6FC6058F7334A7BB1F1 /* OARequestParameter.m */,
+				ACFC9BE420429CBA2A8BC9EB /* OAServiceTicket.h */,
+				31CAA4757823CAEE9BDF4B3A /* OAServiceTicket.m */,
+				606465EC4A19FD35C23BF519 /* OASignatureProviding.h */,
+				55E4005DD40CF568993A5782 /* OAToken.h */,
+				0CA3C357B26F687885974051 /* OAToken.m */,
+				0B8CD084FCCDA78719E45E0A /* OATokenManager.h */,
+				EA154DE4F3F2FDBA5B1E4B5B /* OATokenManager.m */,
+				117ED5213A7C639AF5DCC894 /* OAuthConsumer.h */,
+				AE229BB3AA1F7BB19C547677 /* OAuthConsumer.podspec */,
+				EAA6FCB52434ED33444B3A2B /* hmac.c */,
+				33E6F85C42F63872357F6679 /* hmac.h */,
+				89441031A29DF030D21249AA /* sha1.c */,
+				5F3EC396CD950CA2BE241E00 /* sha1.h */,
+				6A97BF534A019410C96C4E4A /* Support Files */,
+			);
+			path = OAuthConsumer;
+			sourceTree = "<group>";
+		};
+		29D76159A2E7C9FC5937C374 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				640292B4EFB519DF01978744 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49910540C2430BF16140DDBF = {
+			isa = PBXGroup;
+			children = (
+				F125238262569EFDA1555BE4 /* Podfile */,
+				29D76159A2E7C9FC5937C374 /* Frameworks */,
+				8E74AFA39C08B95888D30517 /* Pods */,
+				C04DA73C8994E03C1849BD95 /* Products */,
+				745457B3A546598B490E85ED /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		580A37FF77B7B160C161BB9C /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				D42FAD562DF865E6E923D1B9 /* JSONAPI.h */,
+				88DE6D20C1D7F278890BD6A1 /* JSONAPI.m */,
+				1BBAF18C452FBB1CA86CD6B5 /* JSONHTTPClient.h */,
+				A999E3D8343C26D21961B1AD /* JSONHTTPClient.m */,
+				0E3E8AA88F458722A00C928A /* JSONKeyMapper.h */,
+				BB2575A27648EF9FABE4E0E8 /* JSONKeyMapper.m */,
+				166E16D0E44E6D6CE19EA772 /* JSONModel.h */,
+				777EDF22310249C81DB0B18E /* JSONModel.m */,
+				97B2ECC0E95D444E8C3F7354 /* JSONModel+networking.h */,
+				FA2AC24DF5105CC5205AB1A5 /* JSONModel+networking.m */,
+				99C88424DC649F1590D56BD1 /* JSONModelArray.h */,
+				06437224747765CE88768473 /* JSONModelArray.m */,
+				0CA06DAA5ADD4DEE32B30FCA /* JSONModelClassProperty.h */,
+				5DCE57F9805B26A3D8C4EAFD /* JSONModelClassProperty.m */,
+				CA7F9871207EE37B802EBF22 /* JSONModelError.h */,
+				DC14308FCBEEBA8795E5D6CE /* JSONModelError.m */,
+				F432221FAFCE1EE7AF8421B7 /* JSONModelLib.h */,
+				5A5C630BBB9820778FFA5068 /* JSONValueTransformer.h */,
+				2723007957A7E822A43536F1 /* JSONValueTransformer.m */,
+				E2DC73DC1F78D0196DA202EB /* NSArray+JSONModel.h */,
+				BEDE98162EFB6788E30670FA /* NSArray+JSONModel.m */,
+				7C48D2364D779C322FD2C86C /* Support Files */,
+			);
+			path = JSONModel;
+			sourceTree = "<group>";
+		};
+		640292B4EFB519DF01978744 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				4E9A1D84A626A0016D6639B3 /* Foundation.framework */,
+				6B022E81BD47D17C0D6F8ADE /* Security.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		6A97BF534A019410C96C4E4A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4662FA3C8510061D85426030 /* Pods-OAuthConsumer.xcconfig */,
+				E70DEA5874D9D67535CCDC5F /* Pods-OAuthConsumer-Private.xcconfig */,
+				0C9164D05FC888A86773A9F1 /* Pods-OAuthConsumer-dummy.m */,
+				2747114D57931A94DD368014 /* Pods-OAuthConsumer-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-OAuthConsumer";
+			sourceTree = "<group>";
+		};
+		745457B3A546598B490E85ED /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EEEC16D04CFCBB59DFA8A74E /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		79BD5E800B2C3614EC4BF5C8 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				06FAC2249735D975222B2300 /* Pods-FXKeychain.xcconfig */,
+				45ACCA567B362C741D367B47 /* Pods-FXKeychain-Private.xcconfig */,
+				6F5209DE2E47C28098D255AA /* Pods-FXKeychain-dummy.m */,
+				A128C2DB1DAC7B004A362F17 /* Pods-FXKeychain-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-FXKeychain";
+			sourceTree = "<group>";
+		};
+		7C48D2364D779C322FD2C86C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7C48AE347357C0B12E041490 /* Pods-JSONModel.xcconfig */,
+				C818016C7CE57E0EFAFA4E5C /* Pods-JSONModel-Private.xcconfig */,
+				B270064BD9044371D55F7BD5 /* Pods-JSONModel-dummy.m */,
+				E074091FA3F1165CD8347F2B /* Pods-JSONModel-prefix.pch */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-JSONModel";
+			sourceTree = "<group>";
+		};
+		8E74AFA39C08B95888D30517 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CB1667260DC8DBB35BA64105 /* FXKeychain */,
+				580A37FF77B7B160C161BB9C /* JSONModel */,
+				217EAD6FD83CFE7831518F94 /* OAuthConsumer */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		C04DA73C8994E03C1849BD95 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9988ADAD7283409F2520FAAE /* OAuthConsumer.bundle */,
+				F13D3EBBF9EB6A9BFD610F62 /* libPods.a */,
+				D1502A903F02F34DE072D5C6 /* libPods-FXKeychain.a */,
+				9F1203F4736330295B596760 /* libPods-JSONModel.a */,
+				0D8B6D0ED5E48660F0D0A8D2 /* libPods-OAuthConsumer.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CB1667260DC8DBB35BA64105 /* FXKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				40ABF58B60BA818A00661F78 /* FXKeychain.h */,
+				B1462F5C33850A90E96373EA /* FXKeychain.m */,
+				79BD5E800B2C3614EC4BF5C8 /* Support Files */,
+			);
+			path = FXKeychain;
+			sourceTree = "<group>";
+		};
+		EEEC16D04CFCBB59DFA8A74E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				218D10C542AC34F92CDF9466 /* Pods-acknowledgements.markdown */,
+				F8F0F4216C82F0484ABEF39B /* Pods-acknowledgements.plist */,
+				1E309F800C16CFB5174B874A /* Pods-dummy.m */,
+				749391CB18502FBFFDE13DA6 /* Pods-environment.h */,
+				F6CA4EBC60CFCA1C1B3744FA /* Pods-resources.sh */,
+				59F09C41AA3848A8981698EA /* Pods.debug.xcconfig */,
+				0E2884D86D36C6ABE48908E9 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			path = "Target Support Files/Pods";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		102A54D081A970CD521DEADB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C8A8CD170756C66B43910F8E /* JSONAPI.h in Headers */,
+				DE93BDE02C0703F308519364 /* JSONHTTPClient.h in Headers */,
+				5D08D08FEFFC4F33B5BDAB84 /* JSONKeyMapper.h in Headers */,
+				84A1F08AC92F8D6D807AF72B /* JSONModel+networking.h in Headers */,
+				1F7F4FC03826FE3D1278FB3F /* JSONModel.h in Headers */,
+				BEAC862CE9A04D6F85FD0C21 /* JSONModelArray.h in Headers */,
+				15F123036886D71986DCD2E4 /* JSONModelClassProperty.h in Headers */,
+				C0285788205AC0C2D0D085CB /* JSONModelError.h in Headers */,
+				0AE9E8DE0DFB497690E6F5EC /* JSONModelLib.h in Headers */,
+				DE576D6839AB901C6E71BD0F /* JSONValueTransformer.h in Headers */,
+				B133383DFCD1C18B77A8BE0C /* NSArray+JSONModel.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		82F835F6FF873AD1C12158D8 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A59F479C4E7B5F80B5C78EC /* FXKeychain.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C01FA131601F5B362853B39F /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F599FCFA83D748CBB4E081F1 /* Base64Transcoder.h in Headers */,
+				5689E17CB01C414227905BBB /* NSMutableURLRequest+Parameters.h in Headers */,
+				031D837255E1343C74D43720 /* NSString+URLEncoding.h in Headers */,
+				DC23E6DCD2BE3A4E39B7E9C8 /* NSURL+Base.h in Headers */,
+				125C95CC02CFD30AB1C4A93E /* OAAttachment.h in Headers */,
+				0D0BA07B4B2152C8DBC14858 /* OACall.h in Headers */,
+				FFDC5DD85A7564FD08042E33 /* OAConsumer.h in Headers */,
+				AA897593347454AF826687A3 /* OADataFetcher.h in Headers */,
+				9DDA5426581C19BBE8EBC1C0 /* OAHMAC_SHA1SignatureProvider.h in Headers */,
+				E702AE3A70F60848F21B7BD4 /* OAMutableURLRequest.h in Headers */,
+				9E7B1BFD6DE0D964A667B6C1 /* OAPlaintextSignatureProvider.h in Headers */,
+				2A5A3D8218E124D121A0F1E0 /* OAProblem.h in Headers */,
+				AA5C549B5552118C9E516D8A /* OARequestParameter.h in Headers */,
+				9831E8A51350F03B1F4A420B /* OAServiceTicket.h in Headers */,
+				EFE777729695FC6BB189B744 /* OASignatureProviding.h in Headers */,
+				BB47A3ABECAEA66676961A13 /* OAToken.h in Headers */,
+				EC9786D810F47FA24FC9426A /* OATokenManager.h in Headers */,
+				FC3D478A18F2A997F4D6742D /* OAuthConsumer.h in Headers */,
+				BB38AD59D498A4424F6CC5E7 /* hmac.h in Headers */,
+				8B3C9CBF0657726EAE01F216 /* sha1.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		0B1F405465C6C35010A6FF16 /* Pods-JSONModel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A6B669FC7B3D8C9958DAEE5D /* Build configuration list for PBXNativeTarget "Pods-JSONModel" */;
+			buildPhases = (
+				8F03CF48822640273E51E243 /* Sources */,
+				F878CCD40515D4CC11341097 /* Frameworks */,
+				102A54D081A970CD521DEADB /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-JSONModel";
+			productName = "Pods-JSONModel";
+			productReference = 9F1203F4736330295B596760 /* libPods-JSONModel.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		713607BD3254A98AAD6EC3B0 /* Pods-OAuthConsumer-OAuthConsumer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7C7A2D3DD2F40A47DC9ED093 /* Build configuration list for PBXNativeTarget "Pods-OAuthConsumer-OAuthConsumer" */;
+			buildPhases = (
+				3C4BE7B78A26E3AC0C8AB7B3 /* Sources */,
+				D9ADF5F4BC48BA8B4B310BBA /* Frameworks */,
+				4D3FBCA446551141B18D3FF6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-OAuthConsumer-OAuthConsumer";
+			productName = "Pods-OAuthConsumer-OAuthConsumer";
+			productReference = 9988ADAD7283409F2520FAAE /* OAuthConsumer.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+		B3C0C90E763D3CFBE53AA594 /* Pods-FXKeychain */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4EC039FCDC2AD02FB669F96 /* Build configuration list for PBXNativeTarget "Pods-FXKeychain" */;
+			buildPhases = (
+				4BDEFA8FA8048BC3A9B7A7EA /* Sources */,
+				026BFD1BDD35BEB825D22A20 /* Frameworks */,
+				82F835F6FF873AD1C12158D8 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-FXKeychain";
+			productName = "Pods-FXKeychain";
+			productReference = D1502A903F02F34DE072D5C6 /* libPods-FXKeychain.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		BE9F603BE355A18FEEFD5179 /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5CC107FF3ED86B981630727F /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				B75C4C71670422DA00E02E15 /* Sources */,
+				F0D0335D633E37319C6A069B /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CC9BE30513175F6FECC363BB /* PBXTargetDependency */,
+				5F1AF814E5B4FF823B18D1BF /* PBXTargetDependency */,
+				12DD0C2B661749A357AB0FCC /* PBXTargetDependency */,
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = F13D3EBBF9EB6A9BFD610F62 /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CFCCCF6CE5163108EF41846A /* Pods-OAuthConsumer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 53DD62C8A225B4523D15FA32 /* Build configuration list for PBXNativeTarget "Pods-OAuthConsumer" */;
+			buildPhases = (
+				AFE0B6F05C13D4F1D13D9ADC /* Sources */,
+				B17D889ECCF9CFFCC3C657A0 /* Frameworks */,
+				C01FA131601F5B362853B39F /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6E0645E8402291214445B2EB /* PBXTargetDependency */,
+			);
+			name = "Pods-OAuthConsumer";
+			productName = "Pods-OAuthConsumer";
+			productReference = 0D8B6D0ED5E48660F0D0A8D2 /* libPods-OAuthConsumer.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84C6B2EBA62BF2395D173631 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+			};
+			buildConfigurationList = 421386AF008F79D1CF89FC51 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 49910540C2430BF16140DDBF;
+			productRefGroup = C04DA73C8994E03C1849BD95 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BE9F603BE355A18FEEFD5179 /* Pods */,
+				B3C0C90E763D3CFBE53AA594 /* Pods-FXKeychain */,
+				0B1F405465C6C35010A6FF16 /* Pods-JSONModel */,
+				CFCCCF6CE5163108EF41846A /* Pods-OAuthConsumer */,
+				713607BD3254A98AAD6EC3B0 /* Pods-OAuthConsumer-OAuthConsumer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4D3FBCA446551141B18D3FF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3C4BE7B78A26E3AC0C8AB7B3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4BDEFA8FA8048BC3A9B7A7EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD67B68079C012A8FDA4F5E7 /* FXKeychain.m in Sources */,
+				99A56596875B222229F37672 /* Pods-FXKeychain-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F03CF48822640273E51E243 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E68673200661116CC20B5213 /* JSONAPI.m in Sources */,
+				B34EEE86199ABC75460CC92B /* JSONHTTPClient.m in Sources */,
+				42A9B11854E63FDE4FB74F8F /* JSONKeyMapper.m in Sources */,
+				B551891CC3D269D20DBBDA56 /* JSONModel+networking.m in Sources */,
+				74E8D9037F52E69D245E24B5 /* JSONModel.m in Sources */,
+				340E66B27EDEC042F6F76FC7 /* JSONModelArray.m in Sources */,
+				7418D99D6122EA2FE99943F3 /* JSONModelClassProperty.m in Sources */,
+				203F28F2631A68BBA256422E /* JSONModelError.m in Sources */,
+				34BF2D215FDE0F6E0A409774 /* JSONValueTransformer.m in Sources */,
+				13349B7B409558EB18776266 /* NSArray+JSONModel.m in Sources */,
+				DCCDDCFAA12058D6450C34B2 /* Pods-JSONModel-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFE0B6F05C13D4F1D13D9ADC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				582FCF444EBB647A71A88537 /* Base64Transcoder.c in Sources */,
+				226FD696B52A359789643C7A /* LICENSE in Sources */,
+				EF2E607C0A428C8973815275 /* NSMutableURLRequest+Parameters.m in Sources */,
+				B9AA7CFD8A79555C2C32757C /* NSString+URLEncoding.m in Sources */,
+				662AE467BCEE3C40026869F6 /* NSURL+Base.m in Sources */,
+				17FBE2586396A4255BC30842 /* OAAttachment.m in Sources */,
+				6249A6A188C7BAC08C47E564 /* OACall.m in Sources */,
+				601F087C58422B3520527C84 /* OAConsumer.m in Sources */,
+				8D2A344369988F19A9ABE336 /* OADataFetcher.m in Sources */,
+				F18357F6450698BBE30BB44A /* OAHMAC_SHA1SignatureProvider.m in Sources */,
+				61B877194834F5B898C5AD10 /* OAMutableURLRequest.m in Sources */,
+				C50BD9C1DF3EB5184699AE95 /* OAPlaintextSignatureProvider.m in Sources */,
+				76E7ECDB72EECF444BAAA620 /* OAProblem.m in Sources */,
+				2AD46965297A82D1E5785DC8 /* OARequestParameter.m in Sources */,
+				ECB49C97C7F95C3AF38E1990 /* OAServiceTicket.m in Sources */,
+				A4A6227D72F339938C4ECDF1 /* OAToken.m in Sources */,
+				1D0F42C6C283249440D3CBED /* OATokenManager.m in Sources */,
+				1535830039B29DB841AAFA7E /* OAuthConsumer.podspec in Sources */,
+				E6032512D40197EA08521848 /* Pods-OAuthConsumer-dummy.m in Sources */,
+				04D7B81870678299F0521384 /* hmac.c in Sources */,
+				8C02CC7486E874542FE1EC01 /* sha1.c in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B75C4C71670422DA00E02E15 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9AC39D6F6A419D90858E72C4 /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		12DD0C2B661749A357AB0FCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-OAuthConsumer";
+			target = CFCCCF6CE5163108EF41846A /* Pods-OAuthConsumer */;
+			targetProxy = 4C16AB27AC44E5116AB6BDA7 /* PBXContainerItemProxy */;
+		};
+		5F1AF814E5B4FF823B18D1BF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-JSONModel";
+			target = 0B1F405465C6C35010A6FF16 /* Pods-JSONModel */;
+			targetProxy = D674A7810341585D016E9018 /* PBXContainerItemProxy */;
+		};
+		6E0645E8402291214445B2EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-OAuthConsumer-OAuthConsumer";
+			target = 713607BD3254A98AAD6EC3B0 /* Pods-OAuthConsumer-OAuthConsumer */;
+			targetProxy = 19020ED6698033F25ECF2C04 /* PBXContainerItemProxy */;
+		};
+		CC9BE30513175F6FECC363BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-FXKeychain";
+			target = B3C0C90E763D3CFBE53AA594 /* Pods-FXKeychain */;
+			targetProxy = 80613F781B95752C86AE3ACA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		01C53BF50299E623AC2CB12A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = OAuthConsumer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+		22724B58EB8AA7BC15AC7803 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C818016C7CE57E0EFAFA4E5C /* Pods-JSONModel-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-JSONModel/Pods-JSONModel-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		2F9C12D6D2C7BCB09C308C64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				PRODUCT_NAME = OAuthConsumer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		3022DDC0B575C6D14D2B00AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E2884D86D36C6ABE48908E9 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		3872AD3522268C79B0E7EAED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E70DEA5874D9D67535CCDC5F /* Pods-OAuthConsumer-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-OAuthConsumer/Pods-OAuthConsumer-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		4D0391BAA328A5E7580A0720 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45ACCA567B362C741D367B47 /* Pods-FXKeychain-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-FXKeychain/Pods-FXKeychain-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		53E6DA1C7C5E3B11BD7696BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45ACCA567B362C741D367B47 /* Pods-FXKeychain-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-FXKeychain/Pods-FXKeychain-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		6454DA6881E261E151A9335F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C818016C7CE57E0EFAFA4E5C /* Pods-JSONModel-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-JSONModel/Pods-JSONModel-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		7605C22D6AB7E358E79867BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A11CA9B84B0D36EDB7844542 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 59F09C41AA3848A8981698EA /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DC589AA095471D0AA6C11C9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		EFE905E11A6551188BB45AEF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E70DEA5874D9D67535CCDC5F /* Pods-OAuthConsumer-Private.xcconfig */;
+			buildSettings = {
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-OAuthConsumer/Pods-OAuthConsumer-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		421386AF008F79D1CF89FC51 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC589AA095471D0AA6C11C9E /* Debug */,
+				7605C22D6AB7E358E79867BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		53DD62C8A225B4523D15FA32 /* Build configuration list for PBXNativeTarget "Pods-OAuthConsumer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3872AD3522268C79B0E7EAED /* Debug */,
+				EFE905E11A6551188BB45AEF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5CC107FF3ED86B981630727F /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A11CA9B84B0D36EDB7844542 /* Debug */,
+				3022DDC0B575C6D14D2B00AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7C7A2D3DD2F40A47DC9ED093 /* Build configuration list for PBXNativeTarget "Pods-OAuthConsumer-OAuthConsumer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2F9C12D6D2C7BCB09C308C64 /* Debug */,
+				01C53BF50299E623AC2CB12A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A6B669FC7B3D8C9958DAEE5D /* Build configuration list for PBXNativeTarget "Pods-JSONModel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22724B58EB8AA7BC15AC7803 /* Debug */,
+				6454DA6881E261E151A9335F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4EC039FCDC2AD02FB669F96 /* Build configuration list for PBXNativeTarget "Pods-FXKeychain" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53E6DA1C7C5E3B11BD7696BE /* Debug */,
+				4D0391BAA328A5E7580A0720 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 84C6B2EBA62BF2395D173631 /* Project object */;
+}
