@@ -161,7 +161,7 @@ static NSString * const PTKAccessTokenKey   = @"ptk_access_token";
 }
 
 
-#pragma mark twitts request
+#pragma mark tweets request
 
 - (void)requestTwittsWithCallback:(void (^)(BOOL, NSArray *, NSError *))callback {
     self.twittsRequestCallback = callback;
@@ -187,24 +187,24 @@ static NSString * const PTKAccessTokenKey   = @"ptk_access_token";
 - (void)apiTicket:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data {
     if (ticket.didSucceed) {
         NSArray *parsedArray = (NSArray *)[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-        NSMutableArray *twitts = [NSMutableArray new];
+        NSMutableArray *tweets = [NSMutableArray new];
         for (NSDictionary *twittData in parsedArray) {
-            PTKTwitt *twitt = [[PTKTwitt alloc] initWithDictionary:twittData error:nil];
-            [twitts addObject:twitt];
+            PTKTwitt *tweet = [[PTKTwitt alloc] initWithDictionary:twittData error:nil];
+            [tweets addObject:tweet];
         }
-        [self callTwittsRequestCallbackWithSuccess:YES twitts:twitts error:nil];
+        [self callTwittsRequestCallbackWithSuccess:YES tweets:tweets error:nil];
     } else {
-        [self callTwittsRequestCallbackWithSuccess:NO twitts:nil error:nil];
+        [self callTwittsRequestCallbackWithSuccess:NO tweets:nil error:nil];
     }
 }
 
 - (void)apiTicket:(OAServiceTicket *)ticket didFailWithError:(NSError *)error {
-    [self callTwittsRequestCallbackWithSuccess:NO twitts:nil error:nil];
+    [self callTwittsRequestCallbackWithSuccess:NO tweets:nil error:nil];
 }
 
-- (void)callTwittsRequestCallbackWithSuccess:(BOOL)success twitts:(NSArray *)twitts error:(NSError *)error {
+- (void)callTwittsRequestCallbackWithSuccess:(BOOL)success tweets:(NSArray *)tweets error:(NSError *)error {
     if (self.twittsRequestCallback != nil) {
-        self.twittsRequestCallback(success, twitts, error);
+        self.twittsRequestCallback(success, tweets, error);
     }
     self.twittsRequestCallback = nil;
 }

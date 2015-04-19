@@ -19,6 +19,7 @@
 #pragma mark authorization methods
 - (void)authorizeWithCallback:(void (^)(BOOL success, NSError *error))callback;
 
+- (void)addTweet:(NSString *)tweet withCallback:(void (^)(BOOL success, NSError *error))callback;
 
 #pragma mark data based methods
 @property (nonatomic, readonly) NSInteger count;

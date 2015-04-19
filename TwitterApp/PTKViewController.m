@@ -52,6 +52,25 @@
         }    }];
 }
 
+- (IBAction)addButtonPressed:(id)sender {
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Add tweet" message:nil preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+        textField.placeholder = @"Enter tweet here";
+    }];
+    
+    UIAlertAction *addAction = [UIAlertAction actionWithTitle:@"Add" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+        NSString *tweet = ((UITextField *)alertController.textFields.firstObject).text;
+        [self tryAddTweet:tweet];
+    }];
+    
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+    
+    [alertController addAction:addAction];
+    [alertController addAction:cancelAction];
+    
+    [self presentViewController:alertController animated:YES completion:nil];
+}
 #pragma mark table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -67,8 +86,8 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:twitterCellReusingID];
     }
-    PTKTwitt *twitt = [self.twitterManager twittAtIndex:indexPath.row];
-    cell.textLabel.text = twitt.text;
+    PTKTwitt *tweet = [self.twitterManager twittAtIndex:indexPath.row];
+    cell.textLabel.text = tweet.text;
     return cell;
 }
 
@@ -86,6 +105,12 @@
             [PTKErrorHandler handleError:error];
         }
     }];
+}
+
+- (void)tryAddTweet:(NSString *)tweet {
+    if (tweet != nil && ![tweet  isEqualToString: @""]) {
+        [self.twitterManager addTweet:tweet withCallback:nil];
+    }
 }
 
 @end

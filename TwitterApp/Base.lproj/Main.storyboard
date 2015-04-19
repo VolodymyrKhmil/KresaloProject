@@ -51,7 +51,11 @@
                                 <action selector="authorizeButtonPressed:" destination="vXZ-lx-hvc" id="sTT-UX-uqZ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zdp-Qx-Edu"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Zdp-Qx-Edu">
+                            <connections>
+                                <action selector="addButtonPressed:" destination="vXZ-lx-hvc" id="1sF-mJ-aPg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="twittsTableView" destination="XZf-RU-lrz" id="5kH-er-d2q"/>

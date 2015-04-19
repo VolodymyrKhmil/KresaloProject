@@ -16,7 +16,7 @@
 
 - (void)requestAccessTokenWithVerifier:(NSString *)verifier andCallback:(void (^)(BOOL success, NSError *error))callback;
 
-- (void)requestTwittsWithCallback:(void (^)(BOOL success, NSArray *twitts, NSError *error))callback;
+- (void)requestTwittsWithCallback:(void (^)(BOOL success, NSArray *tweets, NSError *error))callback;
 
 - (NSString *)verifierFromCallbackRequest:(NSURLRequest *)request;
 

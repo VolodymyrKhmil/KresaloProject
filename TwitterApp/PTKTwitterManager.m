@@ -21,7 +21,7 @@
 
 @property (nonatomic, copy) void (^authorizationCallback)(BOOL, NSError*);
 
-@property (nonatomic, strong) NSArray *twitts;
+@property (nonatomic, strong) NSArray *tweets;
 
 @end
 
@@ -109,13 +109,13 @@
 
 #pragma mark data based methods
 - (NSInteger)count {
-    return self.twitts == nil ? 0 : self.twitts.count;
+    return self.tweets == nil ? 0 : self.tweets.count;
 }
 
 - (void)updateTwittsWithCallback:(void (^)(BOOL, NSError *))callback {
-    [self.apiManager requestTwittsWithCallback:^(BOOL success, NSArray *twitts, NSError *error) {
-        if (success && twitts != nil) {
-            self.twitts = twitts;
+    [self.apiManager requestTwittsWithCallback:^(BOOL success, NSArray *tweets, NSError *error) {
+        if (success && tweets != nil) {
+            self.tweets = tweets;
             callback(YES, nil);
         } else {
             callback(NO, error);
@@ -124,11 +124,16 @@
 }
 
 - (PTKTwitt *)twittAtIndex:(NSInteger)index {
-    if (self.twitts != nil && self.twitts.count > index) {
-        return [self.twitts objectAtIndex:index];
+    if (self.tweets != nil && self.tweets.count > index) {
+        return [self.tweets objectAtIndex:index];
     } else {
         return nil;
     }
+}
+
+#pragma  mark tweets adding part
+- (void)addTweet:(NSString *)tweet withCallback:(void (^)(BOOL, NSError *))callback {
+    
 }
 
 @end
