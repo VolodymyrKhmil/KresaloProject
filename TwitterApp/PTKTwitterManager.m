@@ -113,7 +113,7 @@
 }
 
 - (void)updateTwittsWithCallback:(void (^)(BOOL, NSError *))callback {
-    [self.apiManager requestTwittsWithCallback:^(BOOL success, NSArray *tweets, NSError *error) {
+    [self.apiManager requestTweetsWithCallback:^(BOOL success, NSArray *tweets, NSError *error) {
         if (success && tweets != nil) {
             self.tweets = tweets;
             callback(YES, nil);
@@ -133,7 +133,17 @@
 
 #pragma  mark tweets adding part
 - (void)addTweet:(NSString *)tweet withCallback:(void (^)(BOOL, NSError *))callback {
-    
+    PTKTwitterManager *selfCopy = self;
+    [self.apiManager addTweet:tweet withCallback:^(BOOL success, PTKTwitt *tweet, NSError *error) {
+        if (success && tweet != nil) {
+            NSMutableArray *mutableTweets = [[NSMutableArray alloc] initWithArray:selfCopy.tweets];
+            [mutableTweets insertObject:tweet atIndex:0];
+            selfCopy.tweets = mutableTweets;
+        }
+        if (callback != nil) {
+            callback(success, error);
+        }
+    }];
 }
 
 @end

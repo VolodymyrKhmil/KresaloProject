@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PTKTwitt.h"
 
 
 
@@ -16,7 +17,9 @@
 
 - (void)requestAccessTokenWithVerifier:(NSString *)verifier andCallback:(void (^)(BOOL success, NSError *error))callback;
 
-- (void)requestTwittsWithCallback:(void (^)(BOOL success, NSArray *tweets, NSError *error))callback;
+- (void)requestTweetsWithCallback:(void (^)(BOOL success, NSArray *tweets, NSError *error))callback;
+
+- (void)addTweet:(NSString *)tweet withCallback:(void (^)(BOOL success, PTKTwitt *twitt, NSError *error))callback;
 
 - (NSString *)verifierFromCallbackRequest:(NSURLRequest *)request;
 

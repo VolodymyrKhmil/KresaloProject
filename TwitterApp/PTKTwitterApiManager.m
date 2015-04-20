@@ -14,7 +14,6 @@
 
 #import "NSMutableURLRequest+HTTPMethod.h"
 
-#import "PTKTwitt.h"
 #import "PTKURLParser.h"
 #import "FXKeychain.h"
 
@@ -30,6 +29,7 @@ static NSString * const PTKAccessTokenKey   = @"ptk_access_token";
 @property (nonatomic, copy) void (^authorezationURLRequestCallback)(BOOL , NSURL *, NSError *);
 @property (nonatomic, copy) void (^accessTokenRequestCallback)(BOOL, NSError *);
 @property (nonatomic, copy) void (^twittsRequestCallback)(BOOL, NSArray *, NSError *);
+@property (nonatomic, copy) void (^addTweetRequestCallback)(BOOL, PTKTwitt *, NSError *);
 
 @end
 
@@ -116,7 +116,7 @@ static NSString * const PTKAccessTokenKey   = @"ptk_access_token";
     OAConsumer *consumer = [[OAConsumer alloc] initWithKey:PTKConsumerKey
                                                     secret:PTKConsumerSecret];
     
-    OADataFetcher *fetcher = [[OADataFetcher alloc] init];
+    OADataFetcher *fetcher = [OADataFetcher new];
     
     NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/oauth/access_token"];
     
@@ -161,16 +161,16 @@ static NSString * const PTKAccessTokenKey   = @"ptk_access_token";
 }
 
 
-#pragma mark tweets request
+#pragma mark get tweets request
 
-- (void)requestTwittsWithCallback:(void (^)(BOOL, NSArray *, NSError *))callback {
+- (void)requestTweetsWithCallback:(void (^)(BOOL, NSArray *, NSError *))callback {
     self.twittsRequestCallback = callback;
     OAConsumer *consumer = [[OAConsumer alloc] initWithKey:PTKConsumerKey
                                                     secret:PTKConsumerSecret];
     
-    OADataFetcher *fetcher = [[OADataFetcher alloc] init];
+    OADataFetcher *fetcher = [OADataFetcher new];
     
-    NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/1.1/statuses/home_timeline.json"];
+    NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/1.1/statuses/user_timeline.json"];
     
     OAMutableURLRequest *request = [[OAMutableURLRequest alloc] initWithURL:url
                                                                    consumer:consumer
@@ -215,6 +215,52 @@ static NSString * const PTKAccessTokenKey   = @"ptk_access_token";
     PTKURLParser *parser = [[PTKURLParser alloc] initWithURLString:request.URL.absoluteString];
     NSString *verifier = [parser valueForVariable:PTKVerifierKey];
     return verifier;
+}
+
+#pragma  mark add tweet request
+- (void)addTweet:(NSString *)tweet  withCallback:(void (^)(BOOL, PTKTwitt *, NSError *))callback {
+    self.addTweetRequestCallback = callback;
+    OAConsumer *consumer = [[OAConsumer alloc] initWithKey:PTKConsumerKey
+                                                    secret:PTKConsumerSecret];
+    
+    OADataFetcher *fetcher = [OADataFetcher new];
+    
+    NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/1.1/statuses/update.json"];
+    OARequestParameter *statusParamether = [OARequestParameter requestParameter:@"status"
+                                                                          value:tweet];
+    
+    OAMutableURLRequest *request = [[OAMutableURLRequest alloc] initWithURL:url
+                                                                   consumer:consumer
+                                                                      token:[self savedAccessToken]
+                                                                      realm:nil
+                                                          signatureProvider:nil];
+    [request setPTKHTTPMethod:PTKHTTPMethodPost];
+    request.parameters = @[statusParamether];
+    [request prepare];
+    [fetcher fetchDataWithRequest:request delegate:self
+                didFinishSelector:@selector(addTweetTicket:didFinishWithData:)
+                  didFailSelector:@selector(addTwetTickket:didFailWithError:)];
+}
+
+-(void)addTweetTicket:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data {
+    if (ticket.didSucceed) {
+        NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data
+                                                                       options:NSJSONReadingMutableLeaves
+                                                                         error:nil];
+        PTKTwitt *tweet = [[PTKTwitt alloc] initWithDictionary:dataDictionary error:nil];
+        [self callAddTweetRequestCallbackWithSuccess:YES tweet:tweet error:nil];
+    }
+    [self callAddTweetRequestCallbackWithSuccess:NO tweet:nil error:nil];
+}
+
+- (void)addTwetTickket:(OAServiceTicket *)ticked didFailWithError:(NSError *)error {
+    [self callAddTweetRequestCallbackWithSuccess:NO tweet:nil error:error];
+}
+
+- (void)callAddTweetRequestCallbackWithSuccess:(BOOL)success tweet:(PTKTwitt *)tweet error:(NSError *)error {
+    if (self.addTweetRequestCallback != nil) {
+        self.addTweetRequestCallback(success, tweet, error);
+    }
 }
 
 @end

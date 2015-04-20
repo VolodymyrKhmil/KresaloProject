@@ -109,7 +109,14 @@
 
 - (void)tryAddTweet:(NSString *)tweet {
     if (tweet != nil && ![tweet  isEqualToString: @""]) {
-        [self.twitterManager addTweet:tweet withCallback:nil];
+        PTKViewController *selfCopy = self;
+        [self.twitterManager addTweet:tweet withCallback:^(BOOL success, NSError *error) {
+            if (success) {
+                [selfCopy.twittsTableView reloadData];
+            } else if (error != nil) {
+                [PTKErrorHandler handleError:error];
+            }
+        }];
     }
 }
 
