@@ -11,6 +11,7 @@
 #import "PTKTwitterManager.h"
 #import "PTKTwitt.h"
 #import "PTKErrorHandler.h"
+#import "MBProgressHUD.h"
 
 @interface PTKViewController () <PTKTwitterManagerDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -124,41 +125,40 @@
 
 #pragma mark private menthods
 - (void)updateTweets {
-    [self.refreshControl beginRefreshing];
-    [self.twitterManager updateTwittsWithCallback:^(BOOL success, NSError *error) {
-        [self.refreshControl endRefreshing];
-        if (success) {
-            [self.twittsTableView reloadData];
-        } else if (error != nil) {
-            [PTKErrorHandler handleError:error];
-        }
-    }];
+    [self changeTweetsDataWithTwitterManagerSelector:@selector(updateTweetsWithCallback:) andExtraParamether:nil];
 }
 
 - (void)tryLoadMoreTweets {
     if (self.twitterManager.canTryLoadMore) {
-        [self.refreshControl beginRefreshing];
-        [self.twitterManager loadMoreTwittsWithCallback:^(BOOL success, NSError *error) {
-            [self.refreshControl endRefreshing];
-            if (success) {
-                [self.twittsTableView reloadData];
-            } else if (error != nil) {
-                [PTKErrorHandler handleError:error];
-            }
-        }];
+        [self changeTweetsDataWithTwitterManagerSelector:@selector(loadMoreTwittsWithCallback:) andExtraParamether:nil];
     }
 }
 
 - (void)tryAddTweet:(NSString *)tweet {
     if (tweet != nil && ![tweet  isEqualToString: @""]) {
-        PTKViewController *selfCopy = self;
-        [self.twitterManager addTweet:tweet withCallback:^(BOOL success, NSError *error) {
-            if (success) {
-                [selfCopy.twittsTableView reloadData];
-            } else if (error != nil) {
-                [PTKErrorHandler handleError:error];
-            }
-        }];
+        [self changeTweetsDataWithTwitterManagerSelector:@selector(addTweet:withCallback:) andExtraParamether:tweet];
+    }
+}
+
+- (void)changeTweetsDataWithTwitterManagerSelector:(SEL)selector andExtraParamether:(id)extraParamether {
+    
+    void (^callbackBlock)(BOOL, NSError *) = ^(BOOL success, NSError *error) {
+        [self.refreshControl endRefreshing];
+        [MBProgressHUD hideAllHUDsForView:self.view animated:YES];
+        if (success) {
+            [self.twittsTableView reloadData];
+        } else if (error != nil) {
+            [PTKErrorHandler handleError:error];
+        }
+    };
+    
+    [self.refreshControl beginRefreshing];
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+    
+    if (extraParamether != nil) {
+        [self.twitterManager performSelector:selector withObject:extraParamether withObject:callbackBlock];
+    } else {
+        [self.twitterManager performSelector:selector withObject:callbackBlock];
     }
 }
 

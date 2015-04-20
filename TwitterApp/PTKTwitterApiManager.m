@@ -163,23 +163,27 @@ static NSString * const PTKAccessTokenKey   = @"ptk_access_token";
 
 #pragma mark get tweets request
 
-- (void)requestTweetsFromLastTweet:(PTKTwitt *)lastTweet withCount:(NSNumber *)count andCallback:(void (^)(BOOL, NSArray *, NSError *))callback {
-    self.twittsRequestCallback = callback;
-    OAConsumer *consumer = [[OAConsumer alloc] initWithKey:PTKConsumerKey
-                                                    secret:PTKConsumerSecret];
+- (void)requestTweetsSinceLastTweet:(PTKTwitt *)lastTweet withCount:(NSNumber *)count andCallback:(void (^)(BOOL, NSArray *, NSError *))callback {
     
-    OADataFetcher *fetcher = [OADataFetcher new];
+    NSMutableArray *paramethers = [NSMutableArray new];
     
-    NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/1.1/statuses/home_timeline.json"];
+    if (count != nil) {
+        OARequestParameter *countParamether = [OARequestParameter requestParameter:@"count"
+                                                                             value:count.stringValue];
+        [paramethers addObject:countParamether];
+    }
     
-    OAMutableURLRequest *request = [[OAMutableURLRequest alloc] initWithURL:url
-                                                                   consumer:consumer
-                                                                      token:[self savedAccessToken]
-                                                                      realm:nil
-                                                          signatureProvider:nil];
+    if (lastTweet != nil) {
+        OARequestParameter *lastTweetParamether = [OARequestParameter requestParameter:@"since_id"
+                                                                                 value:lastTweet.id.stringValue];
+        [paramethers addObject:lastTweetParamether];
+    }
     
-    
-    
+    [self requestTweetsWithParamethers:paramethers andCallback:callback];
+}
+
+
+- (void)requestEarlierTweetsThanTweet:(PTKTwitt *)lastTweet withCount:(NSNumber *)count andCallback:(void (^)(BOOL, NSArray *, NSError *))callback {
     NSMutableArray *paramethers = [NSMutableArray new];
     
     if (count != nil) {
@@ -194,6 +198,25 @@ static NSString * const PTKAccessTokenKey   = @"ptk_access_token";
         [paramethers addObject:lastTweetParamether];
     }
     
+    [self requestTweetsWithParamethers:paramethers andCallback:callback];
+}
+
+
+- (void)requestTweetsWithParamethers:(NSArray *)paramethers andCallback:(void (^)(BOOL, NSArray *, NSError *))callback {
+    self.twittsRequestCallback = callback;
+    OAConsumer *consumer = [[OAConsumer alloc] initWithKey:PTKConsumerKey
+                                                    secret:PTKConsumerSecret];
+    
+    OADataFetcher *fetcher = [OADataFetcher new];
+    
+    NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/1.1/statuses/home_timeline.json"];
+    
+    OAMutableURLRequest *request = [[OAMutableURLRequest alloc] initWithURL:url
+                                                                   consumer:consumer
+                                                                      token:[self savedAccessToken]
+                                                                      realm:nil
+                                                          signatureProvider:nil];
+    
     request.parameters = paramethers;
     
     [fetcher fetchDataWithRequest:request
@@ -201,6 +224,7 @@ static NSString * const PTKAccessTokenKey   = @"ptk_access_token";
                 didFinishSelector:@selector(apiTicket:didFinishWithData:)
                   didFailSelector:@selector(apiTicket:didFailWithError:)];
 }
+
 
 - (void)apiTicket:(OAServiceTicket *)ticket didFinishWithData:(NSData *)data {
     if (ticket.didSucceed) {

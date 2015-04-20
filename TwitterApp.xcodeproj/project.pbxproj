@@ -26,6 +26,7 @@
 		FA97E8031AE426DE007B28F9 /* PTKURLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97E8021AE426DE007B28F9 /* PTKURLParser.m */; };
 		FA97E8051AE4413B007B28F9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA97E8041AE4413B007B28F9 /* Security.framework */; };
 		FA97E8081AE44CEA007B28F9 /* PTKErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97E8071AE44CEA007B28F9 /* PTKErrorHandler.m */; };
+		FA97E8111AE57546007B28F9 /* PTKUniqueMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97E8101AE57546007B28F9 /* PTKUniqueMutableArray.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		FA97E8041AE4413B007B28F9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		FA97E8061AE44CEA007B28F9 /* PTKErrorHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKErrorHandler.h; sourceTree = "<group>"; };
 		FA97E8071AE44CEA007B28F9 /* PTKErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKErrorHandler.m; sourceTree = "<group>"; };
+		FA97E80F1AE57546007B28F9 /* PTKUniqueMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKUniqueMutableArray.h; sourceTree = "<group>"; };
+		FA97E8101AE57546007B28F9 /* PTKUniqueMutableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKUniqueMutableArray.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +202,7 @@
 		FA97E78F1AE24FBA007B28F9 /* Additions */ = {
 			isa = PBXGroup;
 			children = (
+				FA97E80E1AE5752A007B28F9 /* PTKUniqueArray */,
 				FA97E7901AE24FF7007B28F9 /* NSMutableURLRequest+HTTPMethod.h */,
 				FA97E7911AE24FF7007B28F9 /* NSMutableURLRequest+HTTPMethod.m */,
 			);
@@ -233,6 +237,15 @@
 				FA97E79A1AE2DAA1007B28F9 /* PTKTwitterUIManager.m */,
 			);
 			name = PTKTwitterUIManager;
+			sourceTree = "<group>";
+		};
+		FA97E80E1AE5752A007B28F9 /* PTKUniqueArray */ = {
+			isa = PBXGroup;
+			children = (
+				FA97E80F1AE57546007B28F9 /* PTKUniqueMutableArray.h */,
+				FA97E8101AE57546007B28F9 /* PTKUniqueMutableArray.m */,
+			);
+			name = PTKUniqueArray;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,6 +390,7 @@
 				FA97E8031AE426DE007B28F9 /* PTKURLParser.m in Sources */,
 				FA97E7921AE24FF7007B28F9 /* NSMutableURLRequest+HTTPMethod.m in Sources */,
 				FA97E6FA1ADF042C007B28F9 /* PTKViewController.m in Sources */,
+				FA97E8111AE57546007B28F9 /* PTKUniqueMutableArray.m in Sources */,
 				FA97E79B1AE2DAA1007B28F9 /* PTKTwitterUIManager.m in Sources */,
 				FA97E8081AE44CEA007B28F9 /* PTKErrorHandler.m in Sources */,
 				FA97E6F11ADF042C007B28F9 /* main.m in Sources */,

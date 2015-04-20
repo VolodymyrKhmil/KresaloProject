@@ -13,6 +13,7 @@
 #import "PTKTwitterApiManager.h"
 #import "PTKTwitterUIManager.h"
 #import "PTKTwitt.h"
+#import "PTKUniqueMutableArray.h"
 
 
 static NSInteger const tweetsRequestBlockCount = 15;
@@ -25,7 +26,7 @@ static NSInteger const tweetsRequestBlockCount = 15;
 
 @property (nonatomic, copy) void (^authorizationCallback)(BOOL, NSError*);
 
-@property (nonatomic, strong) NSArray *tweets;
+@property (nonatomic, strong) PTKUniqueMutableArray *tweets;
 
 @end
 
@@ -40,6 +41,7 @@ static NSInteger const tweetsRequestBlockCount = 15;
     static dispatch_once_t dispatchToken;
     dispatch_once(&dispatchToken, ^{
             sharedInstance = [[super alloc] initSharedInstance];
+        sharedInstance->_tweets = [PTKUniqueMutableArray new];
     });
 
     return sharedInstance;
@@ -125,12 +127,14 @@ static NSInteger const tweetsRequestBlockCount = 15;
 }
 
 #pragma mark tweets updating
-- (void)updateTwittsWithCallback:(void (^)(BOOL, NSError *))callback {
-    [self.apiManager requestTweetsFromLastTweet:nil
-                                      withCount:@(tweetsRequestBlockCount)
+- (void)updateTweetsWithCallback:(void (^)(BOOL, NSError *))callback {
+    PTKTwitt *lastTweet = self.tweets.firstObject;
+    NSNumber *count = lastTweet == nil ? @(tweetsRequestBlockCount) : nil;
+    [self.apiManager requestTweetsSinceLastTweet:lastTweet
+                                      withCount:count
                                     andCallback:^(BOOL success, NSArray *tweets, NSError *error) {
                                         if (success && tweets != nil) {
-                                            self.tweets = tweets;
+                                            [self.tweets addToFrontObjectsFromArray:tweets];
                                             callback(YES, nil);
                                         } else {
                                             callback(NO, error);
@@ -143,14 +147,14 @@ static NSInteger const tweetsRequestBlockCount = 15;
 #pragma mark tweets uploading
 - (void)loadMoreTwittsWithCallback:(void (^)(BOOL, NSError *))callback {
     PTKTwitt *lastTweet = self.tweets == nil ? nil : (PTKTwitt *)self.tweets.lastObject;
-    [self.apiManager requestTweetsFromLastTweet:lastTweet
+    [self.apiManager requestEarlierTweetsThanTweet:lastTweet
                                       withCount:@(tweetsRequestBlockCount)
                                     andCallback:^(BOOL success, NSArray *tweets, NSError *error) {
                                         if (success && tweets != nil) {
-                                            NSMutableArray *mutableNewTweets = [tweets mutableCopy];
-                                            [mutableNewTweets removeObjectsInArray:self.tweets];
-                                            _canTryLoadMore = mutableNewTweets.count > 0;
-                                            self.tweets = [self.tweets.mutableCopy arrayByAddingObjectsFromArray:mutableNewTweets];
+                                            NSInteger lastCount = self.tweets.count;
+                                            [self.tweets addObjectsFromArray:tweets];
+                                            NSInteger newCount = self.tweets.count;
+                                            _canTryLoadMore = (newCount - lastCount) > 0;
                                             callback(YES, nil);
                                         } else {
                                             callback(NO, error);
@@ -163,9 +167,7 @@ static NSInteger const tweetsRequestBlockCount = 15;
     PTKTwitterManager *selfCopy = self;
     [self.apiManager addTweet:tweet withCallback:^(BOOL success, PTKTwitt *tweet, NSError *error) {
         if (success && tweet != nil) {
-            NSMutableArray *mutableTweets = [selfCopy.tweets mutableCopy];
-            [mutableTweets insertObject:tweet atIndex:0];
-            selfCopy.tweets = mutableTweets;
+            [selfCopy.tweets addToFrontObject:tweet];
         }
         if (callback != nil) {
             callback(success, error);

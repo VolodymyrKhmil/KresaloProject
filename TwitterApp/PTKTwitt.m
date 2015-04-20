@@ -15,7 +15,7 @@
         return NO;
     }
     
-    return self.id == [(PTKTwitt *)object id];
+    return self.id.integerValue == [(PTKTwitt *)object id].integerValue;
 }
 
 @end

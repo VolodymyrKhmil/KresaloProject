@@ -17,7 +17,9 @@
 
 - (void)requestAccessTokenWithVerifier:(NSString *)verifier andCallback:(void (^)(BOOL success, NSError *error))callback;
 
-- (void)requestTweetsFromLastTweet:(PTKTwitt *)lastTweet withCount:(NSNumber *)count andCallback:(void (^)(BOOL, NSArray *, NSError *))callback;
+- (void)requestTweetsSinceLastTweet:(PTKTwitt *)lastTweet withCount:(NSNumber *)count andCallback:(void (^)(BOOL, NSArray *, NSError *))callback;
+
+- (void)requestEarlierTweetsThanTweet:(PTKTwitt *)lastTweet withCount:(NSNumber *)count andCallback:(void (^)(BOOL, NSArray *, NSError *))callback;
 
 - (void)addTweet:(NSString *)tweet withCallback:(void (^)(BOOL success, PTKTwitt *twitt, NSError *error))callback;
 

@@ -25,7 +25,7 @@
 #pragma mark data based methods
 @property (nonatomic, readonly) NSInteger count;
 
-- (void)updateTwittsWithCallback:(void (^)(BOOL success, NSError *error))callback;
+- (void)updateTweetsWithCallback:(void (^)(BOOL success, NSError *error))callback;
 
 - (void)loadMoreTwittsWithCallback:(void (^)(BOOL success, NSError *error))callback;
 
