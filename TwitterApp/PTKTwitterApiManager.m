@@ -163,20 +163,38 @@ static NSString * const PTKAccessTokenKey   = @"ptk_access_token";
 
 #pragma mark get tweets request
 
-- (void)requestTweetsWithCallback:(void (^)(BOOL, NSArray *, NSError *))callback {
+- (void)requestTweetsFromLastTweet:(PTKTwitt *)lastTweet withCount:(NSNumber *)count andCallback:(void (^)(BOOL, NSArray *, NSError *))callback {
     self.twittsRequestCallback = callback;
     OAConsumer *consumer = [[OAConsumer alloc] initWithKey:PTKConsumerKey
                                                     secret:PTKConsumerSecret];
     
     OADataFetcher *fetcher = [OADataFetcher new];
     
-    NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/1.1/statuses/user_timeline.json"];
+    NSURL *url = [NSURL URLWithString:@"https://api.twitter.com/1.1/statuses/home_timeline.json"];
     
     OAMutableURLRequest *request = [[OAMutableURLRequest alloc] initWithURL:url
                                                                    consumer:consumer
                                                                       token:[self savedAccessToken]
                                                                       realm:nil
                                                           signatureProvider:nil];
+    
+    
+    
+    NSMutableArray *paramethers = [NSMutableArray new];
+    
+    if (count != nil) {
+        OARequestParameter *countParamether = [OARequestParameter requestParameter:@"count"
+                                                                             value:count.stringValue];
+        [paramethers addObject:countParamether];
+    }
+    
+    if (lastTweet != nil) {
+        OARequestParameter *lastTweetParamether = [OARequestParameter requestParameter:@"max_id"
+                                                                                 value:lastTweet.id.stringValue];
+        [paramethers addObject:lastTweetParamether];
+    }
+    
+    request.parameters = paramethers;
     
     [fetcher fetchDataWithRequest:request
                          delegate:self

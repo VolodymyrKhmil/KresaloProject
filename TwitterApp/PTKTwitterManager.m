@@ -14,6 +14,10 @@
 #import "PTKTwitterUIManager.h"
 #import "PTKTwitt.h"
 
+
+static NSInteger const tweetsRequestBlockCount = 15;
+
+
 @interface PTKTwitterManager ()
 
 @property (nonatomic, strong, readonly) PTKTwitterApiManager *apiManager;
@@ -112,17 +116,6 @@
     return self.tweets == nil ? 0 : self.tweets.count;
 }
 
-- (void)updateTwittsWithCallback:(void (^)(BOOL, NSError *))callback {
-    [self.apiManager requestTweetsWithCallback:^(BOOL success, NSArray *tweets, NSError *error) {
-        if (success && tweets != nil) {
-            self.tweets = tweets;
-            callback(YES, nil);
-        } else {
-            callback(NO, error);
-        }
-    }];
-}
-
 - (PTKTwitt *)twittAtIndex:(NSInteger)index {
     if (self.tweets != nil && self.tweets.count > index) {
         return [self.tweets objectAtIndex:index];
@@ -131,12 +124,46 @@
     }
 }
 
+#pragma mark tweets updating
+- (void)updateTwittsWithCallback:(void (^)(BOOL, NSError *))callback {
+    [self.apiManager requestTweetsFromLastTweet:nil
+                                      withCount:@(tweetsRequestBlockCount)
+                                    andCallback:^(BOOL success, NSArray *tweets, NSError *error) {
+                                        if (success && tweets != nil) {
+                                            self.tweets = tweets;
+                                            callback(YES, nil);
+                                        } else {
+                                            callback(NO, error);
+                                        }
+                                        _canTryLoadMore = YES;
+                                    }];
+}
+
+
+#pragma mark tweets uploading
+- (void)loadMoreTwittsWithCallback:(void (^)(BOOL, NSError *))callback {
+    PTKTwitt *lastTweet = self.tweets == nil ? nil : (PTKTwitt *)self.tweets.lastObject;
+    [self.apiManager requestTweetsFromLastTweet:lastTweet
+                                      withCount:@(tweetsRequestBlockCount)
+                                    andCallback:^(BOOL success, NSArray *tweets, NSError *error) {
+                                        if (success && tweets != nil) {
+                                            NSMutableArray *mutableNewTweets = [tweets mutableCopy];
+                                            [mutableNewTweets removeObjectsInArray:self.tweets];
+                                            _canTryLoadMore = mutableNewTweets.count > 0;
+                                            self.tweets = [self.tweets.mutableCopy arrayByAddingObjectsFromArray:mutableNewTweets];
+                                            callback(YES, nil);
+                                        } else {
+                                            callback(NO, error);
+                                        }
+                                    }];
+}
+
 #pragma  mark tweets adding part
 - (void)addTweet:(NSString *)tweet withCallback:(void (^)(BOOL, NSError *))callback {
     PTKTwitterManager *selfCopy = self;
     [self.apiManager addTweet:tweet withCallback:^(BOOL success, PTKTwitt *tweet, NSError *error) {
         if (success && tweet != nil) {
-            NSMutableArray *mutableTweets = [[NSMutableArray alloc] initWithArray:selfCopy.tweets];
+            NSMutableArray *mutableTweets = [selfCopy.tweets mutableCopy];
             [mutableTweets insertObject:tweet atIndex:0];
             selfCopy.tweets = mutableTweets;
         }

@@ -12,5 +12,6 @@
 @interface PTKTwitt : JSONModel <NSCopying>
 
 @property (nonatomic, strong) NSString *text;
+@property (nonatomic, strong) NSNumber *id;
 
 @end

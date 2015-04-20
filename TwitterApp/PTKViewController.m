@@ -12,7 +12,7 @@
 #import "PTKTwitt.h"
 #import "PTKErrorHandler.h"
 
-@interface PTKViewController () <PTKTwitterManagerDelegate, UITableViewDataSource>
+@interface PTKViewController () <PTKTwitterManagerDelegate, UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *twittsTableView;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
@@ -32,12 +32,12 @@
     [super viewDidLoad];
     [self addRefreshControlToTableView];
     
-    [self updateTwitts];
+    [self updateTweets];
 }
 
 - (void)addRefreshControlToTableView {
     self.refreshControl = [UIRefreshControl new];
-    [self.refreshControl addTarget:self action:@selector(updateTwitts) forControlEvents:UIControlEventValueChanged];
+    [self.refreshControl addTarget:self action:@selector(updateTweets) forControlEvents:UIControlEventValueChanged];
     [self.twittsTableView addSubview:self.refreshControl];
 }
 
@@ -51,7 +51,7 @@
 - (IBAction)authorizeButtonPressed:(id)sender {
     [self.twitterManager authorizeWithCallback:^(BOOL success, NSError *error) {
         if (success) {
-            [self updateTwitts];
+            [self updateTweets];
         }    }];
 }
 
@@ -83,6 +83,12 @@
     return self.twitterManager.count;
 }
 
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UIView *footerView = [[UIView alloc] initWithFrame:self.view.bounds];
+    return footerView;
+}
+
+#pragma mark table view delegate
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *twitterCellReusingID = @"twitter_cell_reusing_id";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:twitterCellReusingID];
@@ -94,13 +100,30 @@
     return cell;
 }
 
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)aScrollView
+                  willDecelerate:(BOOL)decelerate
+{
+    CGPoint offset = aScrollView.contentOffset;
+    CGRect bounds = aScrollView.bounds;
+    CGSize size = aScrollView.contentSize;
+    UIEdgeInsets inset = aScrollView.contentInset;
+    float y = offset.y + bounds.size.height - inset.bottom;
+    float height = size.height;
+    
+    float reloadDistance = 20;
+    if(y > height + reloadDistance) {
+        [self tryLoadMoreTweets];
+    }
+}
+
 #pragma mark twitter manager delegate methods
 - (void)twitterManagerNeedToPresentViewController:(UIViewController *)viewController {
     [self presentViewController:viewController animated:YES completion:nil];
 }
 
 #pragma mark private menthods
-- (void)updateTwitts {
+- (void)updateTweets {
     [self.refreshControl beginRefreshing];
     [self.twitterManager updateTwittsWithCallback:^(BOOL success, NSError *error) {
         [self.refreshControl endRefreshing];
@@ -110,6 +133,20 @@
             [PTKErrorHandler handleError:error];
         }
     }];
+}
+
+- (void)tryLoadMoreTweets {
+    if (self.twitterManager.canTryLoadMore) {
+        [self.refreshControl beginRefreshing];
+        [self.twitterManager loadMoreTwittsWithCallback:^(BOOL success, NSError *error) {
+            [self.refreshControl endRefreshing];
+            if (success) {
+                [self.twittsTableView reloadData];
+            } else if (error != nil) {
+                [PTKErrorHandler handleError:error];
+            }
+        }];
+    }
 }
 
 - (void)tryAddTweet:(NSString *)tweet {

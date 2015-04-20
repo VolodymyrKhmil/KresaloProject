@@ -10,4 +10,12 @@
 
 @implementation PTKTwitt
 
+- (BOOL)isEqual:(id)object {
+    if (![object isKindOfClass:self.class]) {
+        return NO;
+    }
+    
+    return self.id == [(PTKTwitt *)object id];
+}
+
 @end

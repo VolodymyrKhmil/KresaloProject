@@ -15,6 +15,7 @@
 
 @property (nonatomic, weak) id<PTKTwitterManagerDelegate> delegate;
 
+@property (nonatomic, readonly) BOOL canTryLoadMore;
 
 #pragma mark authorization methods
 - (void)authorizeWithCallback:(void (^)(BOOL success, NSError *error))callback;
@@ -25,6 +26,8 @@
 @property (nonatomic, readonly) NSInteger count;
 
 - (void)updateTwittsWithCallback:(void (^)(BOOL success, NSError *error))callback;
+
+- (void)loadMoreTwittsWithCallback:(void (^)(BOOL success, NSError *error))callback;
 
 - (id)twittAtIndex:(NSInteger)index;
 
