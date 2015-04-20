@@ -75,9 +75,10 @@ static NSInteger const tweetsRequestBlockCount = 15;
         if (self.delegate != nil) {
             if (success && authorezationURL != nil) {
                 NSURLRequest *request = [NSURLRequest requestWithURL:authorezationURL];
-                UIViewController *webPageViewController = [self.uiManager webPageViewControllerForRequest:request requestsHandler:^(NSURLRequest * request) {
+                __block UIViewController *webPageViewController = [self.uiManager webPageViewControllerForRequest:request requestsHandler:^(NSURLRequest * request) {
                     NSString *verifier = [self.apiManager verifierFromCallbackRequest:request];
                     if (verifier != nil) {
+                        [webPageViewController.presentingViewController dismissViewControllerAnimated:NO completion:nil];
                         [self setupVerifierAndRequestAccessToken:verifier];
                     }
                 }];
