@@ -15,6 +15,7 @@
 @interface PTKViewController () <PTKTwitterManagerDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *twittsTableView;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @property (nonatomic) PTKTwitterManager *twitterManager;
 
@@ -29,13 +30,15 @@
 #pragma mark lifecycle methods
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.twitterManager updateTwittsWithCallback:^(BOOL success, NSError *error) {
-        if (success) {
-            [self.twittsTableView reloadData];
-        } else if (error != nil) {
-            [PTKErrorHandler handleError:error];
-        }
-    }];
+    [self addRefreshControlToTableView];
+    
+    [self updateTwitts];
+}
+
+- (void)addRefreshControlToTableView {
+    self.refreshControl = [UIRefreshControl new];
+    [self.refreshControl addTarget:self action:@selector(updateTwitts) forControlEvents:UIControlEventValueChanged];
+    [self.twittsTableView addSubview:self.refreshControl];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -98,7 +101,9 @@
 
 #pragma mark private menthods
 - (void)updateTwitts {
+    [self.refreshControl beginRefreshing];
     [self.twitterManager updateTwittsWithCallback:^(BOOL success, NSError *error) {
+        [self.refreshControl endRefreshing];
         if (success) {
             [self.twittsTableView reloadData];
         } else if (error != nil) {
