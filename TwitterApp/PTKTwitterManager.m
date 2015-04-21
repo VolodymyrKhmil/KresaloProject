@@ -12,7 +12,6 @@
 
 #import "PTKTwitterApiManager.h"
 #import "PTKTwitterUIManager.h"
-#import "PTKTwitt.h"
 #import "PTKUniqueMutableArray.h"
 
 
@@ -38,8 +37,8 @@ static NSInteger const tweetsRequestBlockCount = 20;
 + (instancetype)sharedManager {
     static PTKTwitterManager *sharedInstance;
     
-    static dispatch_once_t dispatchToken;
-    dispatch_once(&dispatchToken, ^{
+    static dispatch_once_t PTKTwitterSharedManagerDispatchToken;
+    dispatch_once(&PTKTwitterSharedManagerDispatchToken, ^{
             sharedInstance = [[super alloc] initSharedInstance];
         sharedInstance->_tweets = [PTKUniqueMutableArray new];
     });
@@ -119,7 +118,7 @@ static NSInteger const tweetsRequestBlockCount = 20;
     return self.tweets == nil ? 0 : self.tweets.count;
 }
 
-- (PTKTwitt *)twittAtIndex:(NSInteger)index {
+- (PTKTweet *)twittAtIndex:(NSInteger)index {
     if (self.tweets != nil && self.tweets.count > index) {
         return [self.tweets objectAtIndex:index];
     } else {
@@ -129,7 +128,7 @@ static NSInteger const tweetsRequestBlockCount = 20;
 
 #pragma mark tweets updating
 - (void)updateTweetsWithCallback:(void (^)(BOOL, NSError *))callback {
-    PTKTwitt *lastTweet = self.tweets.firstObject;
+    PTKTweet *lastTweet = self.tweets.firstObject;
     NSNumber *count = lastTweet == nil ? @(tweetsRequestBlockCount) : nil;
     [self.apiManager requestTweetsSinceLastTweet:lastTweet
                                       withCount:count
@@ -147,7 +146,7 @@ static NSInteger const tweetsRequestBlockCount = 20;
 
 #pragma mark tweets uploading
 - (void)loadMoreTwittsWithCallback:(void (^)(BOOL, NSError *))callback {
-    PTKTwitt *lastTweet = self.tweets == nil ? nil : (PTKTwitt *)self.tweets.lastObject;
+    PTKTweet *lastTweet = self.tweets == nil ? nil : (PTKTweet *)self.tweets.lastObject;
     [self.apiManager requestEarlierTweetsThanTweet:lastTweet
                                       withCount:@(tweetsRequestBlockCount)
                                     andCallback:^(BOOL success, NSArray *tweets, NSError *error) {
@@ -166,7 +165,7 @@ static NSInteger const tweetsRequestBlockCount = 20;
 #pragma  mark tweets adding part
 - (void)addTweet:(NSString *)tweet withCallback:(void (^)(BOOL, NSError *))callback {
     PTKTwitterManager *selfCopy = self;
-    [self.apiManager addTweet:tweet withCallback:^(BOOL success, PTKTwitt *tweet, NSError *error) {
+    [self.apiManager addTweet:tweet withCallback:^(BOOL success, PTKTweet *tweet, NSError *error) {
         if (success && tweet != nil) {
             [selfCopy.tweets addToFrontObject:tweet];
         }

@@ -1,5 +1,5 @@
 //
-//  PTKTwitt.h
+//  PTKTweet.h
 //  TwitterApp
 //
 //  Created by Vasyl Khmil on 4/19/15.
@@ -11,7 +11,7 @@
 #import "PTKEntities.h"
 #import "PTKUser.h"
 
-@interface PTKTwitt : JSONModel <NSCopying>
+@interface PTKTweet : JSONModel <NSCopying>
 
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSNumber *id;
@@ -19,8 +19,12 @@
 @property (nonatomic, strong) PTKUser *user;
 
 
+#pragma mark self generated properties
+@property (nonatomic, strong) NSURL<Optional> *webPageURL;
+@property (nonatomic, strong) NSURL<Optional> *twitterAppURL;
 
-#pragma mark own methods
+
+#pragma mark deep data getting properties
 @property (nonatomic, readonly) NSURL *iconURL;
 
 @end

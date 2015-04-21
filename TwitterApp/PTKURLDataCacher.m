@@ -25,9 +25,9 @@
 + (instancetype)defaultCacher {
     static PTKURLDataCacher *defaultCacher;
     
-    static dispatch_once_t dispatchToken;
+    static dispatch_once_t PTKDefaultURLDataCacherDispatchToken;
     
-    dispatch_once(&dispatchToken, ^{
+    dispatch_once(&PTKDefaultURLDataCacherDispatchToken, ^{
         defaultCacher = [PTKURLDataCacher new];
     });
     

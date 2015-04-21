@@ -20,7 +20,6 @@
 
 
 @property (nonatomic) PTKURLDataCacher *cacher;
-@property (nonatomic, strong) PTKTwitt *tweet;
 
 
 #pragma  mark abstract methods
@@ -53,7 +52,7 @@
 }
 
 
-- (instancetype)initWithTweet:(PTKTwitt *)tweet {
+- (instancetype)initWithTweet:(PTKTweet *)tweet {
     NSArray *nibViews = [[NSBundle mainBundle] loadNibNamed:@"PtkTweetCell" owner:self options:nil];
     
     if (tweet.entities.media != nil) {

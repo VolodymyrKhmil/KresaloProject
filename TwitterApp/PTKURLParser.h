@@ -14,7 +14,7 @@
 
 @property (nonatomic, retain) NSArray *variables;
 
-- (id)initWithURLString:(NSString *)url;
+- (instancetype)initWithURLString:(NSString *)url;
 - (NSString *)valueForVariable:(NSString *)varName;
 
 @end

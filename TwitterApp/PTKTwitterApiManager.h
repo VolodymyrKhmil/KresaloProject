@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "PTKTwitt.h"
+#import "PTKTweet.h"
 
 
 
@@ -17,11 +17,11 @@
 
 - (void)requestAccessTokenWithVerifier:(NSString *)verifier andCallback:(void (^)(BOOL success, NSError *error))callback;
 
-- (void)requestTweetsSinceLastTweet:(PTKTwitt *)lastTweet withCount:(NSNumber *)count andCallback:(void (^)(BOOL, NSArray *, NSError *))callback;
+- (void)requestTweetsSinceLastTweet:(PTKTweet *)lastTweet withCount:(NSNumber *)count andCallback:(void (^)(BOOL, NSArray *, NSError *))callback;
 
-- (void)requestEarlierTweetsThanTweet:(PTKTwitt *)lastTweet withCount:(NSNumber *)count andCallback:(void (^)(BOOL, NSArray *, NSError *))callback;
+- (void)requestEarlierTweetsThanTweet:(PTKTweet *)lastTweet withCount:(NSNumber *)count andCallback:(void (^)(BOOL, NSArray *, NSError *))callback;
 
-- (void)addTweet:(NSString *)tweet withCallback:(void (^)(BOOL success, PTKTwitt *twitt, NSError *error))callback;
+- (void)addTweet:(NSString *)tweet withCallback:(void (^)(BOOL success, PTKTweet *twitt, NSError *error))callback;
 
 - (NSString *)verifierFromCallbackRequest:(NSURLRequest *)request;
 

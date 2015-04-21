@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "PTKTwitterManagerDelegate.h"
+#import "PTKTweet.h"
 
 #define PTKController
 
@@ -25,11 +26,13 @@
 #pragma mark data based methods
 @property (nonatomic, readonly) NSInteger count;
 
+- (PTKTweet *)twittAtIndex:(NSInteger)index;
+
+
+#pragma mark request calling methods
 - (void)updateTweetsWithCallback:(void (^)(BOOL success, NSError *error))callback;
 
 - (void)loadMoreTwittsWithCallback:(void (^)(BOOL success, NSError *error))callback;
-
-- (id)twittAtIndex:(NSInteger)index;
 
 
 #pragma mark singleton methods

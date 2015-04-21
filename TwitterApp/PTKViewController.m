@@ -9,7 +9,7 @@
 #import "PTKViewController.h"
 
 #import "PTKTwitterManager.h"
-#import "PTKTwitt.h"
+#import "PTKTweet.h"
 
 #import "PTKErrorHandler.h"
 #import "MBProgressHUD.h"
@@ -101,7 +101,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    PTKTwitt *tweet = [self.twitterManager twittAtIndex:indexPath.row];
+    PTKTweet *tweet = [self.twitterManager twittAtIndex:indexPath.row];
     
     PTKTweetCell *cell = [[PTKTweetCell alloc] initWithTweet:tweet];
     
@@ -114,6 +114,24 @@
 }
 
 #pragma mark table view delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    PTKTweetCell *cell = (PTKTweetCell *)[tableView cellForRowAtIndexPath:indexPath];
+    PTKTweet *tweet = cell.tweet;
+    
+    [self openTweetPage:tweet];
+}
+
+- (void)openTweetPage:(PTKTweet *)tweet {
+    UIApplication *application = [UIApplication sharedApplication];
+    if ([application canOpenURL:tweet.twitterAppURL]) {
+        [application openURL:tweet.twitterAppURL];
+    } else {
+        [application openURL:tweet.webPageURL];
+    }
+}
+
 - (void)scrollViewDidEndDragging:(UIScrollView *)aScrollView
                   willDecelerate:(BOOL)decelerate
 {

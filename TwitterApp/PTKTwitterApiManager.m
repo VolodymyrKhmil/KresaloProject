@@ -15,6 +15,7 @@
 #import "NSMutableURLRequest+HTTPMethod.h"
 
 #import "PTKURLParser.h"
+#import "PTKToTweetConverter.h"
 #import "FXKeychain.h"
 
 static NSString * const PTKConsumerKey      = @"CmHWYbQ4C3JPimlJDeYmji2Ot";
@@ -29,7 +30,7 @@ static NSString * const PTKAccessTokenKey   = @"ptk_access_token";
 @property (nonatomic, copy) void (^authorezationURLRequestCallback)(BOOL , NSURL *, NSError *);
 @property (nonatomic, copy) void (^accessTokenRequestCallback)(BOOL, NSError *);
 @property (nonatomic, copy) void (^twittsRequestCallback)(BOOL, NSArray *, NSError *);
-@property (nonatomic, copy) void (^addTweetRequestCallback)(BOOL, PTKTwitt *, NSError *);
+@property (nonatomic, copy) void (^addTweetRequestCallback)(BOOL, PTKTweet *, NSError *);
 
 @end
 
@@ -163,7 +164,7 @@ static NSString * const PTKAccessTokenKey   = @"ptk_access_token";
 
 #pragma mark get tweets request
 
-- (void)requestTweetsSinceLastTweet:(PTKTwitt *)lastTweet withCount:(NSNumber *)count andCallback:(void (^)(BOOL, NSArray *, NSError *))callback {
+- (void)requestTweetsSinceLastTweet:(PTKTweet *)lastTweet withCount:(NSNumber *)count andCallback:(void (^)(BOOL, NSArray *, NSError *))callback {
     
     NSMutableArray *paramethers = [NSMutableArray new];
     
@@ -183,7 +184,7 @@ static NSString * const PTKAccessTokenKey   = @"ptk_access_token";
 }
 
 
-- (void)requestEarlierTweetsThanTweet:(PTKTwitt *)lastTweet withCount:(NSNumber *)count andCallback:(void (^)(BOOL, NSArray *, NSError *))callback {
+- (void)requestEarlierTweetsThanTweet:(PTKTweet *)lastTweet withCount:(NSNumber *)count andCallback:(void (^)(BOOL, NSArray *, NSError *))callback {
     NSMutableArray *paramethers = [NSMutableArray new];
     
     if (count != nil) {
@@ -230,8 +231,8 @@ static NSString * const PTKAccessTokenKey   = @"ptk_access_token";
     if (ticket.didSucceed) {
         NSArray *parsedArray = (NSArray *)[NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
         NSMutableArray *tweets = [NSMutableArray new];
-        for (NSDictionary *twittData in parsedArray) {
-            PTKTwitt *tweet = [[PTKTwitt alloc] initWithDictionary:twittData error:nil];
+        for (NSDictionary *tweetData in parsedArray) {
+            PTKTweet *tweet = [PTKToTweetConverter tweetFromDictionary:tweetData];
             [tweets addObject:tweet];
         }
         [self callTwittsRequestCallbackWithSuccess:YES tweets:tweets error:nil];
@@ -260,7 +261,7 @@ static NSString * const PTKAccessTokenKey   = @"ptk_access_token";
 }
 
 #pragma  mark add tweet request
-- (void)addTweet:(NSString *)tweet  withCallback:(void (^)(BOOL, PTKTwitt *, NSError *))callback {
+- (void)addTweet:(NSString *)tweet  withCallback:(void (^)(BOOL, PTKTweet *, NSError *))callback {
     self.addTweetRequestCallback = callback;
     OAConsumer *consumer = [[OAConsumer alloc] initWithKey:PTKConsumerKey
                                                     secret:PTKConsumerSecret];
@@ -289,7 +290,7 @@ static NSString * const PTKAccessTokenKey   = @"ptk_access_token";
         NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data
                                                                        options:NSJSONReadingMutableLeaves
                                                                          error:nil];
-        PTKTwitt *tweet = [[PTKTwitt alloc] initWithDictionary:dataDictionary error:nil];
+        PTKTweet *tweet = [[PTKTweet alloc] initWithDictionary:dataDictionary error:nil];
         [self callAddTweetRequestCallbackWithSuccess:YES tweet:tweet error:nil];
     }
     [self callAddTweetRequestCallbackWithSuccess:NO tweet:nil error:nil];
@@ -299,7 +300,7 @@ static NSString * const PTKAccessTokenKey   = @"ptk_access_token";
     [self callAddTweetRequestCallbackWithSuccess:NO tweet:nil error:error];
 }
 
-- (void)callAddTweetRequestCallbackWithSuccess:(BOOL)success tweet:(PTKTwitt *)tweet error:(NSError *)error {
+- (void)callAddTweetRequestCallbackWithSuccess:(BOOL)success tweet:(PTKTweet *)tweet error:(NSError *)error {
     if (self.addTweetRequestCallback != nil) {
         self.addTweetRequestCallback(success, tweet, error);
     }

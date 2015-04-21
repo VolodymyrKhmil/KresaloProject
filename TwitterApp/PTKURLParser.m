@@ -11,7 +11,7 @@
 @implementation PTKURLParser
 @synthesize variables;
 
-- (id) initWithURLString:(NSString *)url{
+- (instancetype)initWithURLString:(NSString *)url{
     self = [super init];
     if (self != nil) {
         NSString *string = url;

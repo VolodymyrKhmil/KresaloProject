@@ -9,14 +9,16 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "PTKTwitt.h"
+#import "PTKTweet.h"
 
 
 @interface PTKTweetCell : UITableViewCell
 
+@property (nonatomic, readonly) PTKTweet *tweet;
+
 @property (nonatomic, readonly) CGFloat preferedHeight;
 
 
-- (instancetype)initWithTweet:(PTKTwitt *)tweet;
+- (instancetype)initWithTweet:(PTKTweet *)tweet;
 
 @end
