@@ -75,15 +75,7 @@
 - (void)setTextContent {
     PTKTwitterAttributedText *attributedText = [[PTKTwitterAttributedText alloc] initWithText:self.tweet.text];
     self.tweetTextLabel.text = attributedText.text;
-    if (attributedText.retweet == nil) {
-        CGRect textLabelFrame = self.tweetTextLabel.frame;
-        textLabelFrame.size.height +=textLabelFrame.origin.y - self.retweetLabel.frame.origin.y;
-        textLabelFrame.origin.y = self.retweetLabel.frame.origin.y;
-        self.tweetTextLabel.frame = textLabelFrame;
-        self.retweetLabel.hidden = YES;
-    } else {
-        self.retweetLabel.text = attributedText.retweet;
-    }
+    self.retweetLabel.text = attributedText.retweet == nil ? @"" : attributedText.retweet;
 }
 
 - (void)setUserIcon {
@@ -116,12 +108,12 @@
     NSArray *media = self.tweet.entities.media;
     NSURL *mediaURL = [(PTKMedia *)media.firstObject media_url];
     NSData *mediaData = [self.cacher getDataForURL:mediaURL elseTryLoadAsyncWithCallback:^(BOOL success, NSData *data) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            if (success && data != nil) {
-                UIImage *mediaImage = [UIImage imageWithData:data];
+        if (success && data != nil) {
+            UIImage *mediaImage = [UIImage imageWithData:data];
+            dispatch_async(dispatch_get_main_queue(), ^{
                 [self setMediaImageAndCalculateDifferance:mediaImage];
-            }
-        });
+            });
+        }
     }];
     if (mediaData != nil && self.mediaContentImageView != nil) {
         self.mediaContentImageView.image = [UIImage imageWithData:mediaData];
