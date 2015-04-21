@@ -22,16 +22,30 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qek-sh-tRS">
-                        <rect key="frame" x="56" y="8" width="341" height="83"/>
-                        <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="14"/>
+                        <rect key="frame" x="56" y="22" width="341" height="69"/>
+                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUO-Jj-fUJ">
+                        <rect key="frame" x="56" y="8" width="341" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="2x6-x9-llv"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="qek-sh-tRS" firstAttribute="top" secondItem="oUO-Jj-fUJ" secondAttribute="bottom" id="2xw-87-Xk3"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="oUO-Jj-fUJ" secondAttribute="trailing" id="3KL-cv-BsD"/>
                     <constraint firstAttribute="bottomMargin" secondItem="qek-sh-tRS" secondAttribute="bottom" id="7Us-JD-HHY"/>
                     <constraint firstAttribute="trailingMargin" secondItem="qek-sh-tRS" secondAttribute="trailing" id="8rd-WX-ucH"/>
                     <constraint firstItem="tgX-ov-cG0" firstAttribute="width" secondItem="tgX-ov-cG0" secondAttribute="height" multiplier="1:1" id="JxJ-xm-Sia"/>
+                    <constraint firstItem="tgX-ov-cG0" firstAttribute="top" secondItem="oUO-Jj-fUJ" secondAttribute="top" id="MBb-rA-gVH"/>
+                    <constraint firstItem="qek-sh-tRS" firstAttribute="top" secondItem="oUO-Jj-fUJ" secondAttribute="bottom" constant="21" id="T8c-Mv-Lz9"/>
+                    <constraint firstItem="oUO-Jj-fUJ" firstAttribute="leading" secondItem="tgX-ov-cG0" secondAttribute="trailing" constant="8" symbolic="YES" id="YFl-5V-8P6"/>
                     <constraint firstItem="qek-sh-tRS" firstAttribute="top" secondItem="tgX-ov-cG0" secondAttribute="top" id="b37-po-cnb"/>
                     <constraint firstItem="qek-sh-tRS" firstAttribute="leading" secondItem="tgX-ov-cG0" secondAttribute="trailing" constant="8" symbolic="YES" id="gC3-yS-9ER"/>
                     <constraint firstItem="tgX-ov-cG0" firstAttribute="leading" secondItem="pYz-46-KcH" secondAttribute="leadingMargin" id="nKX-jg-aeN"/>
@@ -40,17 +54,20 @@
                 <variation key="default">
                     <mask key="constraints">
                         <exclude reference="JxJ-xm-Sia"/>
+                        <exclude reference="T8c-Mv-Lz9"/>
+                        <exclude reference="b37-po-cnb"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
             <connections>
+                <outlet property="retweetLabel" destination="oUO-Jj-fUJ" id="fuy-pn-jP4"/>
                 <outlet property="tweetTextLabel" destination="qek-sh-tRS" id="v0m-8p-lje"/>
                 <outlet property="userIconImageView" destination="tgX-ov-cG0" id="f0b-Ug-nYi"/>
             </connections>
             <point key="canvasLocation" x="371.5" y="253"/>
         </tableViewCell>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="299" id="ziw-Yd-Uy4" customClass="PTKMediaTweetCell">
-            <rect key="frame" x="0.0" y="0.0" width="473" height="299"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="291" id="ziw-Yd-Uy4" customClass="PTKMediaTweetCell">
+            <rect key="frame" x="0.0" y="0.0" width="473" height="291"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ziw-Yd-Uy4" id="5fy-ax-REK">
                 <autoresizingMask key="autoresizingMask"/>
@@ -63,41 +80,60 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0u-cN-8wv">
-                        <rect key="frame" x="56" y="8" width="409" height="16"/>
+                        <rect key="frame" x="56" y="22" width="409" height="16"/>
                         <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pii-1V-iHS">
-                        <rect key="frame" x="56" y="32" width="409" height="258"/>
+                        <rect key="frame" x="56" y="46" width="409" height="236"/>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pnb-3U-IFX">
+                        <rect key="frame" x="56" y="8" width="409" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="14" id="Mpo-K8-pys"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="12"/>
+                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="E79-6w-bhD" firstAttribute="width" secondItem="E79-6w-bhD" secondAttribute="height" multiplier="1:1" id="0AV-cB-F9L"/>
+                    <constraint firstItem="X0u-cN-8wv" firstAttribute="top" secondItem="Pnb-3U-IFX" secondAttribute="bottom" id="1nv-Ih-dZV"/>
                     <constraint firstItem="pii-1V-iHS" firstAttribute="top" secondItem="X0u-cN-8wv" secondAttribute="bottom" constant="8" symbolic="YES" id="76i-ep-oiT"/>
+                    <constraint firstItem="pii-1V-iHS" firstAttribute="top" secondItem="Pnb-3U-IFX" secondAttribute="bottom" constant="8" symbolic="YES" id="7Wg-95-pNs"/>
                     <constraint firstItem="E79-6w-bhD" firstAttribute="top" secondItem="5fy-ax-REK" secondAttribute="topMargin" id="FFG-S3-tqx"/>
                     <constraint firstAttribute="bottomMargin" secondItem="pii-1V-iHS" secondAttribute="bottom" id="Ldm-aD-4bR"/>
                     <constraint firstAttribute="bottomMargin" secondItem="X0u-cN-8wv" secondAttribute="bottom" id="Mre-vP-uYP"/>
+                    <constraint firstItem="Pnb-3U-IFX" firstAttribute="top" secondItem="E79-6w-bhD" secondAttribute="top" id="SII-V7-zaN"/>
+                    <constraint firstItem="X0u-cN-8wv" firstAttribute="top" secondItem="Pnb-3U-IFX" secondAttribute="bottom" constant="66" id="V8r-Ce-KXJ"/>
                     <constraint firstItem="E79-6w-bhD" firstAttribute="leading" secondItem="5fy-ax-REK" secondAttribute="leadingMargin" id="bHh-E5-ZYd"/>
                     <constraint firstAttribute="trailingMargin" secondItem="pii-1V-iHS" secondAttribute="trailing" id="dWn-qY-EDr"/>
                     <constraint firstItem="X0u-cN-8wv" firstAttribute="top" secondItem="E79-6w-bhD" secondAttribute="top" id="fTi-O7-Lt5"/>
+                    <constraint firstItem="Pnb-3U-IFX" firstAttribute="leading" secondItem="E79-6w-bhD" secondAttribute="trailing" constant="8" symbolic="YES" id="fZ7-C2-LE4"/>
                     <constraint firstAttribute="trailingMargin" secondItem="X0u-cN-8wv" secondAttribute="trailing" id="geX-DQ-DHD"/>
                     <constraint firstItem="X0u-cN-8wv" firstAttribute="leading" secondItem="E79-6w-bhD" secondAttribute="trailing" constant="8" symbolic="YES" id="l3Z-ow-uPL"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Pnb-3U-IFX" secondAttribute="trailing" id="lIo-y5-0uQ"/>
                     <constraint firstItem="X0u-cN-8wv" firstAttribute="leading" secondItem="pii-1V-iHS" secondAttribute="leading" id="max-mc-YMZ"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
                         <exclude reference="0AV-cB-F9L"/>
                         <exclude reference="Mre-vP-uYP"/>
+                        <exclude reference="V8r-Ce-KXJ"/>
+                        <exclude reference="fTi-O7-Lt5"/>
+                        <exclude reference="7Wg-95-pNs"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
             <connections>
                 <outlet property="mediaContentImageView" destination="pii-1V-iHS" id="b7n-1p-WK0"/>
+                <outlet property="retweetLabel" destination="Pnb-3U-IFX" id="Ieg-mv-wFc"/>
                 <outlet property="tweetTextLabel" destination="X0u-cN-8wv" id="joG-cR-85S"/>
                 <outlet property="userIconImageView" destination="E79-6w-bhD" id="uaz-8p-o0q"/>
             </connections>
-            <point key="canvasLocation" x="337.5" y="605.5"/>
+            <point key="canvasLocation" x="337.5" y="601.5"/>
         </tableViewCell>
     </objects>
 </document>

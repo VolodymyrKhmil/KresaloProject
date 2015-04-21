@@ -8,6 +8,7 @@
 
 #import "PTKTweetCell.h"
 #import "PTKURLDataCacher.h"
+#import "PTKTwitterAttributedText.h"
 
 @interface PTKTweetCell ()
 
@@ -15,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *tweetTextLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *mediaContentImageView;
 
+@property (weak, nonatomic) IBOutlet UILabel *retweetLabel;
 
 
 @property (nonatomic) PTKURLDataCacher *cacher;
@@ -71,7 +73,17 @@
 }
 
 - (void)setTextContent {
-    self.tweetTextLabel.text = self.tweet.text;
+    PTKTwitterAttributedText *attributedText = [[PTKTwitterAttributedText alloc] initWithText:self.tweet.text];
+    self.tweetTextLabel.text = attributedText.text;
+    if (attributedText.retweet == nil) {
+        CGRect textLabelFrame = self.tweetTextLabel.frame;
+        textLabelFrame.size.height +=textLabelFrame.origin.y - self.retweetLabel.frame.origin.y;
+        textLabelFrame.origin.y = self.retweetLabel.frame.origin.y;
+        self.tweetTextLabel.frame = textLabelFrame;
+        self.retweetLabel.hidden = YES;
+    } else {
+        self.retweetLabel.text = attributedText.retweet;
+    }
 }
 
 - (void)setUserIcon {

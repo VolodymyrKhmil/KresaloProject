@@ -33,6 +33,7 @@
 		FA97E8231AE62032007B28F9 /* PTKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97E8221AE62032007B28F9 /* PTKViewController.m */; };
 		FA97E8271AE63272007B28F9 /* PTKTweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97E8261AE63272007B28F9 /* PTKTweetCell.m */; };
 		FA97E82A1AE64857007B28F9 /* PtkTweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA97E8291AE64857007B28F9 /* PtkTweetCell.xib */; };
+		FA97E82D1AE65B0F007B28F9 /* PTKTwitterAttributedText.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97E82C1AE65B0F007B28F9 /* PTKTwitterAttributedText.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,8 @@
 		FA97E8251AE63272007B28F9 /* PTKTweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKTweetCell.h; sourceTree = "<group>"; };
 		FA97E8261AE63272007B28F9 /* PTKTweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKTweetCell.m; sourceTree = "<group>"; };
 		FA97E8291AE64857007B28F9 /* PtkTweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PtkTweetCell.xib; sourceTree = "<group>"; };
+		FA97E82B1AE65B0F007B28F9 /* PTKTwitterAttributedText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKTwitterAttributedText.h; sourceTree = "<group>"; };
+		FA97E82C1AE65B0F007B28F9 /* PTKTwitterAttributedText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKTwitterAttributedText.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +168,8 @@
 				FA97E6F31ADF042C007B28F9 /* PTKAppDelegate.m */,
 				FA97E81F1AE61A09007B28F9 /* PTKURLDataCacher.h */,
 				FA97E8201AE61A09007B28F9 /* PTKURLDataCacher.m */,
+				FA97E82B1AE65B0F007B28F9 /* PTKTwitterAttributedText.h */,
+				FA97E82C1AE65B0F007B28F9 /* PTKTwitterAttributedText.m */,
 				FA97E6EE1ADF042C007B28F9 /* Supporting Files */,
 			);
 			path = TwitterApp;
@@ -443,6 +448,7 @@
 				FA97E8151AE5965E007B28F9 /* PTKEntities.m in Sources */,
 				FA97E81B1AE59EFF007B28F9 /* PTKMedia.m in Sources */,
 				FA97E6F41ADF042C007B28F9 /* PTKAppDelegate.m in Sources */,
+				FA97E82D1AE65B0F007B28F9 /* PTKTwitterAttributedText.m in Sources */,
 				FA97E8031AE426DE007B28F9 /* PTKURLParser.m in Sources */,
 				FA97E7921AE24FF7007B28F9 /* NSMutableURLRequest+HTTPMethod.m in Sources */,
 				FA97E8211AE61A09007B28F9 /* PTKURLDataCacher.m in Sources */,
