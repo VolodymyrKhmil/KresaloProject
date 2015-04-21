@@ -16,7 +16,7 @@
 #import "PTKUniqueMutableArray.h"
 
 
-static NSInteger const tweetsRequestBlockCount = 15;
+static NSInteger const tweetsRequestBlockCount = 20;
 
 
 @interface PTKTwitterManager ()

@@ -11,7 +11,6 @@
 		FA97E6F11ADF042C007B28F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97E6F01ADF042C007B28F9 /* main.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FA97E6F41ADF042C007B28F9 /* PTKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97E6F31ADF042C007B28F9 /* PTKAppDelegate.m */; };
 		FA97E6F71ADF042C007B28F9 /* TwitterApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA97E6F51ADF042C007B28F9 /* TwitterApp.xcdatamodeld */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		FA97E6FA1ADF042C007B28F9 /* PTKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97E6F91ADF042C007B28F9 /* PTKViewController.m */; };
 		FA97E6FD1ADF042C007B28F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA97E6FB1ADF042C007B28F9 /* Main.storyboard */; };
 		FA97E6FF1ADF042C007B28F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA97E6FE1ADF042C007B28F9 /* Images.xcassets */; };
 		FA97E7021ADF042C007B28F9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA97E7001ADF042C007B28F9 /* LaunchScreen.xib */; };
@@ -27,6 +26,13 @@
 		FA97E8051AE4413B007B28F9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA97E8041AE4413B007B28F9 /* Security.framework */; };
 		FA97E8081AE44CEA007B28F9 /* PTKErrorHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97E8071AE44CEA007B28F9 /* PTKErrorHandler.m */; };
 		FA97E8111AE57546007B28F9 /* PTKUniqueMutableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97E8101AE57546007B28F9 /* PTKUniqueMutableArray.m */; };
+		FA97E8151AE5965E007B28F9 /* PTKEntities.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97E8141AE5965E007B28F9 /* PTKEntities.m */; };
+		FA97E81B1AE59EFF007B28F9 /* PTKMedia.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97E81A1AE59EFF007B28F9 /* PTKMedia.m */; };
+		FA97E81E1AE5A561007B28F9 /* PTKUser.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97E81D1AE5A561007B28F9 /* PTKUser.m */; };
+		FA97E8211AE61A09007B28F9 /* PTKURLDataCacher.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97E8201AE61A09007B28F9 /* PTKURLDataCacher.m */; };
+		FA97E8231AE62032007B28F9 /* PTKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97E8221AE62032007B28F9 /* PTKViewController.m */; };
+		FA97E8271AE63272007B28F9 /* PTKTweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97E8261AE63272007B28F9 /* PTKTweetCell.m */; };
+		FA97E82A1AE64857007B28F9 /* PtkTweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA97E8291AE64857007B28F9 /* PtkTweetCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +56,6 @@
 		FA97E6F31ADF042C007B28F9 /* PTKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTKAppDelegate.m; sourceTree = "<group>"; };
 		FA97E6F61ADF042C007B28F9 /* TwitterApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TwitterApp.xcdatamodel; sourceTree = "<group>"; };
 		FA97E6F81ADF042C007B28F9 /* PTKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PTKViewController.h; sourceTree = "<group>"; };
-		FA97E6F91ADF042C007B28F9 /* PTKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PTKViewController.m; sourceTree = "<group>"; };
 		FA97E6FC1ADF042C007B28F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA97E6FE1ADF042C007B28F9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FA97E7011ADF042C007B28F9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -78,6 +83,18 @@
 		FA97E8071AE44CEA007B28F9 /* PTKErrorHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKErrorHandler.m; sourceTree = "<group>"; };
 		FA97E80F1AE57546007B28F9 /* PTKUniqueMutableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKUniqueMutableArray.h; sourceTree = "<group>"; };
 		FA97E8101AE57546007B28F9 /* PTKUniqueMutableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKUniqueMutableArray.m; sourceTree = "<group>"; };
+		FA97E8131AE5965E007B28F9 /* PTKEntities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKEntities.h; sourceTree = "<group>"; };
+		FA97E8141AE5965E007B28F9 /* PTKEntities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKEntities.m; sourceTree = "<group>"; };
+		FA97E8191AE59EFF007B28F9 /* PTKMedia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKMedia.h; sourceTree = "<group>"; };
+		FA97E81A1AE59EFF007B28F9 /* PTKMedia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKMedia.m; sourceTree = "<group>"; };
+		FA97E81C1AE5A561007B28F9 /* PTKUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKUser.h; sourceTree = "<group>"; };
+		FA97E81D1AE5A561007B28F9 /* PTKUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKUser.m; sourceTree = "<group>"; };
+		FA97E81F1AE61A09007B28F9 /* PTKURLDataCacher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKURLDataCacher.h; sourceTree = "<group>"; };
+		FA97E8201AE61A09007B28F9 /* PTKURLDataCacher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKURLDataCacher.m; sourceTree = "<group>"; };
+		FA97E8221AE62032007B28F9 /* PTKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKViewController.m; sourceTree = "<group>"; };
+		FA97E8251AE63272007B28F9 /* PTKTweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKTweetCell.h; sourceTree = "<group>"; };
+		FA97E8261AE63272007B28F9 /* PTKTweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKTweetCell.m; sourceTree = "<group>"; };
+		FA97E8291AE64857007B28F9 /* PtkTweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PtkTweetCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,14 +158,13 @@
 		FA97E6ED1ADF042C007B28F9 /* TwitterApp */ = {
 			isa = PBXGroup;
 			children = (
+				FA97E8241AE63013007B28F9 /* UIPart */,
 				FA97E78F1AE24FBA007B28F9 /* Additions */,
 				FA97E7831AE18961007B28F9 /* TwitterSDK */,
 				FA97E6F21ADF042C007B28F9 /* PTKAppDelegate.h */,
 				FA97E6F31ADF042C007B28F9 /* PTKAppDelegate.m */,
-				FA97E6F81ADF042C007B28F9 /* PTKViewController.h */,
-				FA97E6F91ADF042C007B28F9 /* PTKViewController.m */,
-				FA97E8061AE44CEA007B28F9 /* PTKErrorHandler.h */,
-				FA97E8071AE44CEA007B28F9 /* PTKErrorHandler.m */,
+				FA97E81F1AE61A09007B28F9 /* PTKURLDataCacher.h */,
+				FA97E8201AE61A09007B28F9 /* PTKURLDataCacher.m */,
 				FA97E6EE1ADF042C007B28F9 /* Supporting Files */,
 			);
 			path = TwitterApp;
@@ -187,14 +203,13 @@
 		FA97E7831AE18961007B28F9 /* TwitterSDK */ = {
 			isa = PBXGroup;
 			children = (
+				FA97E8121AE5963D007B28F9 /* PTKObjects */,
 				FA97E7A01AE3E452007B28F9 /* PTKTwitterUIManager */,
 				FA97E79F1AE3E40C007B28F9 /* PTKTwitterManager */,
 				FA97E78A1AE2445F007B28F9 /* PTKTwitterApiManager.h */,
 				FA97E78B1AE2445F007B28F9 /* PTKTwitterApiManager.m */,
 				FA97E8011AE426DE007B28F9 /* PTKURLParser.h */,
 				FA97E8021AE426DE007B28F9 /* PTKURLParser.m */,
-				FA97E7B11AE404D9007B28F9 /* PTKTwitt.h */,
-				FA97E7B21AE404D9007B28F9 /* PTKTwitt.m */,
 			);
 			name = TwitterSDK;
 			sourceTree = "<group>";
@@ -246,6 +261,43 @@
 				FA97E8101AE57546007B28F9 /* PTKUniqueMutableArray.m */,
 			);
 			name = PTKUniqueArray;
+			sourceTree = "<group>";
+		};
+		FA97E8121AE5963D007B28F9 /* PTKObjects */ = {
+			isa = PBXGroup;
+			children = (
+				FA97E7B11AE404D9007B28F9 /* PTKTwitt.h */,
+				FA97E7B21AE404D9007B28F9 /* PTKTwitt.m */,
+				FA97E8131AE5965E007B28F9 /* PTKEntities.h */,
+				FA97E8141AE5965E007B28F9 /* PTKEntities.m */,
+				FA97E8191AE59EFF007B28F9 /* PTKMedia.h */,
+				FA97E81A1AE59EFF007B28F9 /* PTKMedia.m */,
+				FA97E81C1AE5A561007B28F9 /* PTKUser.h */,
+				FA97E81D1AE5A561007B28F9 /* PTKUser.m */,
+			);
+			name = PTKObjects;
+			sourceTree = "<group>";
+		};
+		FA97E8241AE63013007B28F9 /* UIPart */ = {
+			isa = PBXGroup;
+			children = (
+				FA97E8281AE646A8007B28F9 /* PTKTweetCell */,
+				FA97E6F81ADF042C007B28F9 /* PTKViewController.h */,
+				FA97E8221AE62032007B28F9 /* PTKViewController.m */,
+				FA97E8061AE44CEA007B28F9 /* PTKErrorHandler.h */,
+				FA97E8071AE44CEA007B28F9 /* PTKErrorHandler.m */,
+			);
+			name = UIPart;
+			sourceTree = "<group>";
+		};
+		FA97E8281AE646A8007B28F9 /* PTKTweetCell */ = {
+			isa = PBXGroup;
+			children = (
+				FA97E8291AE64857007B28F9 /* PtkTweetCell.xib */,
+				FA97E8251AE63272007B28F9 /* PTKTweetCell.h */,
+				FA97E8261AE63272007B28F9 /* PTKTweetCell.m */,
+			);
+			name = PTKTweetCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +384,7 @@
 			files = (
 				FA97E6FD1ADF042C007B28F9 /* Main.storyboard in Resources */,
 				FA97E7981AE2AB58007B28F9 /* PTKWebViewController.xib in Resources */,
+				FA97E82A1AE64857007B28F9 /* PtkTweetCell.xib in Resources */,
 				FA97E7021ADF042C007B28F9 /* LaunchScreen.xib in Resources */,
 				FA97E6FF1ADF042C007B28F9 /* Images.xcassets in Resources */,
 			);
@@ -386,15 +439,20 @@
 			files = (
 				FA97E7861AE18993007B28F9 /* PTKTwitterManager.m in Sources */,
 				FA97E6F71ADF042C007B28F9 /* TwitterApp.xcdatamodeld in Sources */,
+				FA97E81E1AE5A561007B28F9 /* PTKUser.m in Sources */,
+				FA97E8151AE5965E007B28F9 /* PTKEntities.m in Sources */,
+				FA97E81B1AE59EFF007B28F9 /* PTKMedia.m in Sources */,
 				FA97E6F41ADF042C007B28F9 /* PTKAppDelegate.m in Sources */,
 				FA97E8031AE426DE007B28F9 /* PTKURLParser.m in Sources */,
 				FA97E7921AE24FF7007B28F9 /* NSMutableURLRequest+HTTPMethod.m in Sources */,
-				FA97E6FA1ADF042C007B28F9 /* PTKViewController.m in Sources */,
+				FA97E8211AE61A09007B28F9 /* PTKURLDataCacher.m in Sources */,
 				FA97E8111AE57546007B28F9 /* PTKUniqueMutableArray.m in Sources */,
 				FA97E79B1AE2DAA1007B28F9 /* PTKTwitterUIManager.m in Sources */,
 				FA97E8081AE44CEA007B28F9 /* PTKErrorHandler.m in Sources */,
 				FA97E6F11ADF042C007B28F9 /* main.m in Sources */,
 				FA97E7B31AE404D9007B28F9 /* PTKTwitt.m in Sources */,
+				FA97E8231AE62032007B28F9 /* PTKViewController.m in Sources */,
+				FA97E8271AE63272007B28F9 /* PTKTweetCell.m in Sources */,
 				FA97E7951AE2A8EF007B28F9 /* PTKWebViewController.m in Sources */,
 				FA97E78C1AE2445F007B28F9 /* PTKTwitterApiManager.m in Sources */,
 			);

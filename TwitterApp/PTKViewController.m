@@ -10,8 +10,12 @@
 
 #import "PTKTwitterManager.h"
 #import "PTKTwitt.h"
+
 #import "PTKErrorHandler.h"
 #import "MBProgressHUD.h"
+#import "PTKTweetCell.h"
+
+#import "PTKURLDataCacher.h"
 
 @interface PTKViewController () <PTKTwitterManagerDelegate, UITableViewDataSource, UITableViewDelegate>
 
@@ -19,6 +23,7 @@
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @property (nonatomic) PTKTwitterManager *twitterManager;
+@property (nonatomic, strong) PTKURLDataCacher *cacher;
 
 @end
 
@@ -26,6 +31,10 @@
 
 - (PTKTwitterManager *)twitterManager {
     return [PTKTwitterManager sharedManager];
+}
+
+- (PTKURLDataCacher *)cacher {
+    return [PTKURLDataCacher defaultCacher];
 }
 
 #pragma mark lifecycle methods
@@ -89,19 +98,22 @@
     return footerView;
 }
 
-#pragma mark table view delegate
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *twitterCellReusingID = @"twitter_cell_reusing_id";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:twitterCellReusingID];
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:twitterCellReusingID];
-    }
+    
     PTKTwitt *tweet = [self.twitterManager twittAtIndex:indexPath.row];
-    cell.textLabel.text = tweet.text;
+    
+    PTKTweetCell *cell = [[PTKTweetCell alloc] initWithTweet:tweet];
+    
     return cell;
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    PTKTweetCell *cell = (PTKTweetCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
+    return cell.preferedHeight;
+}
 
+#pragma mark table view delegate
 - (void)scrollViewDidEndDragging:(UIScrollView *)aScrollView
                   willDecelerate:(BOOL)decelerate
 {

@@ -18,4 +18,9 @@
     return self.id.integerValue == [(PTKTwitt *)object id].integerValue;
 }
 
+
+- (NSURL *)iconURL {
+    return self.user.profile_image_url;
+}
+
 @end

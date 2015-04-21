@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7525" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7516"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="63u-AR-3O6" customClass="PTKSimpleTweetCell">
+            <rect key="frame" x="0.0" y="0.0" width="405" height="100"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="63u-AR-3O6" id="pYz-46-KcH">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tgX-ov-cG0">
+                        <rect key="frame" x="8" y="8" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="5w8-7S-Llo"/>
+                            <constraint firstAttribute="width" secondItem="tgX-ov-cG0" secondAttribute="height" multiplier="1:1" id="oxc-up-lkT"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qek-sh-tRS">
+                        <rect key="frame" x="56" y="8" width="341" height="83"/>
+                        <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottomMargin" secondItem="qek-sh-tRS" secondAttribute="bottom" id="7Us-JD-HHY"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="qek-sh-tRS" secondAttribute="trailing" id="8rd-WX-ucH"/>
+                    <constraint firstItem="tgX-ov-cG0" firstAttribute="width" secondItem="tgX-ov-cG0" secondAttribute="height" multiplier="1:1" id="JxJ-xm-Sia"/>
+                    <constraint firstItem="qek-sh-tRS" firstAttribute="top" secondItem="tgX-ov-cG0" secondAttribute="top" id="b37-po-cnb"/>
+                    <constraint firstItem="qek-sh-tRS" firstAttribute="leading" secondItem="tgX-ov-cG0" secondAttribute="trailing" constant="8" symbolic="YES" id="gC3-yS-9ER"/>
+                    <constraint firstItem="tgX-ov-cG0" firstAttribute="leading" secondItem="pYz-46-KcH" secondAttribute="leadingMargin" id="nKX-jg-aeN"/>
+                    <constraint firstItem="tgX-ov-cG0" firstAttribute="top" secondItem="pYz-46-KcH" secondAttribute="topMargin" id="rge-lW-2FV"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="JxJ-xm-Sia"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="tweetTextLabel" destination="qek-sh-tRS" id="v0m-8p-lje"/>
+                <outlet property="userIconImageView" destination="tgX-ov-cG0" id="f0b-Ug-nYi"/>
+            </connections>
+            <point key="canvasLocation" x="371.5" y="253"/>
+        </tableViewCell>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="299" id="ziw-Yd-Uy4" customClass="PTKMediaTweetCell">
+            <rect key="frame" x="0.0" y="0.0" width="473" height="299"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ziw-Yd-Uy4" id="5fy-ax-REK">
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="E79-6w-bhD">
+                        <rect key="frame" x="8" y="8" width="40" height="40"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="9f6-tJ-YnH"/>
+                            <constraint firstAttribute="width" secondItem="E79-6w-bhD" secondAttribute="height" multiplier="1:1" id="Edw-Yw-PcX"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X0u-cN-8wv">
+                        <rect key="frame" x="56" y="8" width="409" height="16"/>
+                        <fontDescription key="fontDescription" name="Georgia-Italic" family="Georgia" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pii-1V-iHS">
+                        <rect key="frame" x="56" y="32" width="409" height="258"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="E79-6w-bhD" firstAttribute="width" secondItem="E79-6w-bhD" secondAttribute="height" multiplier="1:1" id="0AV-cB-F9L"/>
+                    <constraint firstItem="pii-1V-iHS" firstAttribute="top" secondItem="X0u-cN-8wv" secondAttribute="bottom" constant="8" symbolic="YES" id="76i-ep-oiT"/>
+                    <constraint firstItem="E79-6w-bhD" firstAttribute="top" secondItem="5fy-ax-REK" secondAttribute="topMargin" id="FFG-S3-tqx"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="pii-1V-iHS" secondAttribute="bottom" id="Ldm-aD-4bR"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="X0u-cN-8wv" secondAttribute="bottom" id="Mre-vP-uYP"/>
+                    <constraint firstItem="E79-6w-bhD" firstAttribute="leading" secondItem="5fy-ax-REK" secondAttribute="leadingMargin" id="bHh-E5-ZYd"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="pii-1V-iHS" secondAttribute="trailing" id="dWn-qY-EDr"/>
+                    <constraint firstItem="X0u-cN-8wv" firstAttribute="top" secondItem="E79-6w-bhD" secondAttribute="top" id="fTi-O7-Lt5"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="X0u-cN-8wv" secondAttribute="trailing" id="geX-DQ-DHD"/>
+                    <constraint firstItem="X0u-cN-8wv" firstAttribute="leading" secondItem="E79-6w-bhD" secondAttribute="trailing" constant="8" symbolic="YES" id="l3Z-ow-uPL"/>
+                    <constraint firstItem="X0u-cN-8wv" firstAttribute="leading" secondItem="pii-1V-iHS" secondAttribute="leading" id="max-mc-YMZ"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="0AV-cB-F9L"/>
+                        <exclude reference="Mre-vP-uYP"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="mediaContentImageView" destination="pii-1V-iHS" id="b7n-1p-WK0"/>
+                <outlet property="tweetTextLabel" destination="X0u-cN-8wv" id="joG-cR-85S"/>
+                <outlet property="userIconImageView" destination="E79-6w-bhD" id="uaz-8p-o0q"/>
+            </connections>
+            <point key="canvasLocation" x="337.5" y="605.5"/>
+        </tableViewCell>
+    </objects>
+</document>
