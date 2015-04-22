@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		B8D07FE6418443B776B72FF7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECB18610781CF3733B73A6E /* libPods.a */; };
 		FA70A5451AE6D42700EC6B4C /* PTKToTweetConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA70A5441AE6D42700EC6B4C /* PTKToTweetConverter.m */; };
+		FA70A54B1AE7EC9E00EC6B4C /* PTKURL.m in Sources */ = {isa = PBXBuildFile; fileRef = FA70A54A1AE7EC9E00EC6B4C /* PTKURL.m */; };
+		FA70A54E1AE7F5A700EC6B4C /* PTKHashTag.m in Sources */ = {isa = PBXBuildFile; fileRef = FA70A54D1AE7F5A700EC6B4C /* PTKHashTag.m */; };
+		FA70A5541AE827F600EC6B4C /* JSONModelTransformerCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = FA70A5531AE827F600EC6B4C /* JSONModelTransformerCategory.m */; };
 		FA97E6F11ADF042C007B28F9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97E6F01ADF042C007B28F9 /* main.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FA97E6F41ADF042C007B28F9 /* PTKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97E6F31ADF042C007B28F9 /* PTKAppDelegate.m */; };
 		FA97E6F71ADF042C007B28F9 /* TwitterApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA97E6F51ADF042C007B28F9 /* TwitterApp.xcdatamodeld */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -53,6 +56,12 @@
 		E5CF0711237760EF1F575390 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		FA70A5431AE6D42700EC6B4C /* PTKToTweetConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKToTweetConverter.h; sourceTree = "<group>"; };
 		FA70A5441AE6D42700EC6B4C /* PTKToTweetConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKToTweetConverter.m; sourceTree = "<group>"; };
+		FA70A5491AE7EC9E00EC6B4C /* PTKURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKURL.h; sourceTree = "<group>"; };
+		FA70A54A1AE7EC9E00EC6B4C /* PTKURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKURL.m; sourceTree = "<group>"; };
+		FA70A54C1AE7F5A700EC6B4C /* PTKHashTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKHashTag.h; sourceTree = "<group>"; };
+		FA70A54D1AE7F5A700EC6B4C /* PTKHashTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKHashTag.m; sourceTree = "<group>"; };
+		FA70A5521AE827F600EC6B4C /* JSONModelTransformerCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelTransformerCategory.h; sourceTree = "<group>"; };
+		FA70A5531AE827F600EC6B4C /* JSONModelTransformerCategory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelTransformerCategory.m; sourceTree = "<group>"; };
 		FA97E6EB1ADF042C007B28F9 /* TwitterApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA97E6EF1ADF042C007B28F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA97E6F01ADF042C007B28F9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -154,6 +163,15 @@
 			name = PTKTwitterApiManager;
 			sourceTree = "<group>";
 		};
+		FA70A5551AE8410D00EC6B4C /* JSONModelTransferCategory */ = {
+			isa = PBXGroup;
+			children = (
+				FA70A5521AE827F600EC6B4C /* JSONModelTransformerCategory.h */,
+				FA70A5531AE827F600EC6B4C /* JSONModelTransformerCategory.m */,
+			);
+			name = JSONModelTransferCategory;
+			sourceTree = "<group>";
+		};
 		FA97E6E21ADF042C007B28F9 = {
 			isa = PBXGroup;
 			children = (
@@ -177,7 +195,6 @@
 		FA97E6ED1ADF042C007B28F9 /* TwitterApp */ = {
 			isa = PBXGroup;
 			children = (
-				FA97E78F1AE24FBA007B28F9 /* Additions */,
 				FA97E7831AE18961007B28F9 /* TwitterSDK */,
 				FA97E8241AE63013007B28F9 /* UIPart */,
 				FA97E6F21ADF042C007B28F9 /* PTKAppDelegate.h */,
@@ -224,6 +241,7 @@
 		FA97E7831AE18961007B28F9 /* TwitterSDK */ = {
 			isa = PBXGroup;
 			children = (
+				FA97E78F1AE24FBA007B28F9 /* Additions */,
 				FA70A5461AE6D65B00EC6B4C /* PTKTwitterApiManager */,
 				FA97E8121AE5963D007B28F9 /* PTKObjects */,
 				FA97E7A01AE3E452007B28F9 /* PTKTwitterUIManager */,
@@ -235,6 +253,7 @@
 		FA97E78F1AE24FBA007B28F9 /* Additions */ = {
 			isa = PBXGroup;
 			children = (
+				FA70A5551AE8410D00EC6B4C /* JSONModelTransferCategory */,
 				FA97E80E1AE5752A007B28F9 /* PTKUniqueArray */,
 				FA97E7901AE24FF7007B28F9 /* NSMutableURLRequest+HTTPMethod.h */,
 				FA97E7911AE24FF7007B28F9 /* NSMutableURLRequest+HTTPMethod.m */,
@@ -292,6 +311,10 @@
 				FA97E81A1AE59EFF007B28F9 /* PTKMedia.m */,
 				FA97E81C1AE5A561007B28F9 /* PTKUser.h */,
 				FA97E81D1AE5A561007B28F9 /* PTKUser.m */,
+				FA70A5491AE7EC9E00EC6B4C /* PTKURL.h */,
+				FA70A54A1AE7EC9E00EC6B4C /* PTKURL.m */,
+				FA70A54C1AE7F5A700EC6B4C /* PTKHashTag.h */,
+				FA70A54D1AE7F5A700EC6B4C /* PTKHashTag.m */,
 			);
 			name = PTKObjects;
 			sourceTree = "<group>";
@@ -457,6 +480,7 @@
 			files = (
 				FA97E7861AE18993007B28F9 /* PTKTwitterManager.m in Sources */,
 				FA97E6F71ADF042C007B28F9 /* TwitterApp.xcdatamodeld in Sources */,
+				FA70A54E1AE7F5A700EC6B4C /* PTKHashTag.m in Sources */,
 				FA97E81E1AE5A561007B28F9 /* PTKUser.m in Sources */,
 				FA70A5451AE6D42700EC6B4C /* PTKToTweetConverter.m in Sources */,
 				FA97E8151AE5965E007B28F9 /* PTKEntities.m in Sources */,
@@ -465,6 +489,7 @@
 				FA97E82D1AE65B0F007B28F9 /* PTKTwitterAttributedText.m in Sources */,
 				FA97E8031AE426DE007B28F9 /* PTKURLParser.m in Sources */,
 				FA97E7921AE24FF7007B28F9 /* NSMutableURLRequest+HTTPMethod.m in Sources */,
+				FA70A5541AE827F600EC6B4C /* JSONModelTransformerCategory.m in Sources */,
 				FA97E8211AE61A09007B28F9 /* PTKURLDataCacher.m in Sources */,
 				FA97E8111AE57546007B28F9 /* PTKUniqueMutableArray.m in Sources */,
 				FA97E79B1AE2DAA1007B28F9 /* PTKTwitterUIManager.m in Sources */,
@@ -472,6 +497,7 @@
 				FA97E6F11ADF042C007B28F9 /* main.m in Sources */,
 				FA97E7B31AE404D9007B28F9 /* PTKTweet.m in Sources */,
 				FA97E8231AE62032007B28F9 /* PTKViewController.m in Sources */,
+				FA70A54B1AE7EC9E00EC6B4C /* PTKURL.m in Sources */,
 				FA97E8271AE63272007B28F9 /* PTKTweetCell.m in Sources */,
 				FA97E7951AE2A8EF007B28F9 /* PTKWebViewController.m in Sources */,
 				FA97E78C1AE2445F007B28F9 /* PTKTwitterApiManager.m in Sources */,

@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PTKTweet.h"
 
 @interface PTKTwitterAttributedText : NSObject
 
 @property (nonatomic, readonly) NSString *retweet;
-@property (nonatomic, retain) NSString *text;
+@property (nonatomic, readonly) NSAttributedString *text;
 
-- (instancetype)initWithText:(NSString *)text;
+- (instancetype)initWithTweet:(PTKTweet *)tweet;
 
 @end

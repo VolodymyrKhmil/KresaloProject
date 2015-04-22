@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "JSONModel.h"
 #import <UIKit/UIKit.h>
+#import "JSONModel.h"
 
 @interface PTKUser : JSONModel<NSCopying>
 
 @property (nonatomic, strong) NSURL *profile_image_url;
+@property (nonatomic, strong) UIColor *profile_link_color;
+@property (nonatomic, strong) UIColor *profile_text_color;
 
 @end

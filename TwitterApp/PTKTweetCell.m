@@ -72,8 +72,8 @@
 }
 
 - (void)setTextContent {
-    PTKTwitterAttributedText *attributedText = [[PTKTwitterAttributedText alloc] initWithText:self.tweet.text];
-    self.tweetTextLabel.text = attributedText.text;
+    PTKTwitterAttributedText *attributedText = [[PTKTwitterAttributedText alloc] initWithTweet:self.tweet];
+    self.tweetTextLabel.attributedText = attributedText.text;
     self.retweetLabel.text = attributedText.retweet == nil ? @"" : attributedText.retweet;
 }
 
