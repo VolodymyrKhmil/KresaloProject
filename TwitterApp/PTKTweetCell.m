@@ -15,8 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *userIconImageView;
 @property (weak, nonatomic) IBOutlet UILabel *tweetTextLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *mediaContentImageView;
-
-@property (weak, nonatomic) IBOutlet UILabel *retweetLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
 
 
 @property (nonatomic) PTKURLDataCacher *cacher;
@@ -53,7 +52,7 @@
 
 
 - (instancetype)initWithTweet:(PTKTweet *)tweet {
-    NSArray *nibViews = [[NSBundle mainBundle] loadNibNamed:@"PtkTweetCell" owner:self options:nil];
+    NSArray *nibViews = [[NSBundle mainBundle] loadNibNamed:@"PTKTweetCell" owner:self options:nil];
     
     if (tweet.entities.media != nil) {
         self = nibViews.lastObject;
@@ -74,7 +73,7 @@
 - (void)setTextContent {
     PTKTwitterAttributedText *attributedText = [[PTKTwitterAttributedText alloc] initWithTweet:self.tweet];
     self.tweetTextLabel.attributedText = attributedText.text;
-    self.retweetLabel.text = attributedText.retweet == nil ? @"" : attributedText.retweet;
+    self.userNameLabel.text = self.tweet.user.name;
 }
 
 - (void)setUserIcon {

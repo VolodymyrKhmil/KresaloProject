@@ -12,6 +12,8 @@
 
 @interface PTKUser : JSONModel<NSCopying>
 
+@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong) NSDate *created_at;
 @property (nonatomic, strong) NSURL *profile_image_url;
 @property (nonatomic, strong) UIColor *profile_link_color;
 @property (nonatomic, strong) UIColor *profile_text_color;

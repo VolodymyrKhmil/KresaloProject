@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		B8D07FE6418443B776B72FF7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ECB18610781CF3733B73A6E /* libPods.a */; };
+		FA349D891B0DE13500561BA3 /* UIColor+ToString.m in Sources */ = {isa = PBXBuildFile; fileRef = FA349D881B0DE13500561BA3 /* UIColor+ToString.m */; };
+		FA349D8D1B121FBF00561BA3 /* NSDate+ToString.m in Sources */ = {isa = PBXBuildFile; fileRef = FA349D8C1B121FBF00561BA3 /* NSDate+ToString.m */; };
+		FA349D931B12659700561BA3 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA349D921B12659700561BA3 /* libsqlite3.0.dylib */; };
+		FA349D951B12659D00561BA3 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FA349D941B12659D00561BA3 /* libsqlite3.dylib */; };
+		FA349D971B13271300561BA3 /* test.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FA349D961B1326F100561BA3 /* test.sqlite */; };
 		FA70A5451AE6D42700EC6B4C /* PTKToTweetConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = FA70A5441AE6D42700EC6B4C /* PTKToTweetConverter.m */; };
 		FA70A54B1AE7EC9E00EC6B4C /* PTKURL.m in Sources */ = {isa = PBXBuildFile; fileRef = FA70A54A1AE7EC9E00EC6B4C /* PTKURL.m */; };
 		FA70A54E1AE7F5A700EC6B4C /* PTKHashTag.m in Sources */ = {isa = PBXBuildFile; fileRef = FA70A54D1AE7F5A700EC6B4C /* PTKHashTag.m */; };
@@ -36,8 +41,9 @@
 		FA97E8211AE61A09007B28F9 /* PTKURLDataCacher.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97E8201AE61A09007B28F9 /* PTKURLDataCacher.m */; };
 		FA97E8231AE62032007B28F9 /* PTKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97E8221AE62032007B28F9 /* PTKViewController.m */; };
 		FA97E8271AE63272007B28F9 /* PTKTweetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97E8261AE63272007B28F9 /* PTKTweetCell.m */; };
-		FA97E82A1AE64857007B28F9 /* PtkTweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA97E8291AE64857007B28F9 /* PtkTweetCell.xib */; };
+		FA97E82A1AE64857007B28F9 /* PTKTweetCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA97E8291AE64857007B28F9 /* PTKTweetCell.xib */; };
 		FA97E82D1AE65B0F007B28F9 /* PTKTwitterAttributedText.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97E82C1AE65B0F007B28F9 /* PTKTwitterAttributedText.m */; };
+		FAE8CB9D1B010EDD00E0411A /* PTKTwitterDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FAE8CB9C1B010EDD00E0411A /* PTKTwitterDatabaseManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +60,13 @@
 		440688E8636ECF9871BE70DF /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		7ECB18610781CF3733B73A6E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E5CF0711237760EF1F575390 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		FA349D871B0DE13500561BA3 /* UIColor+ToString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+ToString.h"; sourceTree = "<group>"; };
+		FA349D881B0DE13500561BA3 /* UIColor+ToString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+ToString.m"; sourceTree = "<group>"; };
+		FA349D8B1B121FBF00561BA3 /* NSDate+ToString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+ToString.h"; sourceTree = "<group>"; };
+		FA349D8C1B121FBF00561BA3 /* NSDate+ToString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+ToString.m"; sourceTree = "<group>"; };
+		FA349D921B12659700561BA3 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		FA349D941B12659D00561BA3 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		FA349D961B1326F100561BA3 /* test.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.sqlite; sourceTree = "<group>"; };
 		FA70A5431AE6D42700EC6B4C /* PTKToTweetConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKToTweetConverter.h; sourceTree = "<group>"; };
 		FA70A5441AE6D42700EC6B4C /* PTKToTweetConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKToTweetConverter.m; sourceTree = "<group>"; };
 		FA70A5491AE7EC9E00EC6B4C /* PTKURL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKURL.h; sourceTree = "<group>"; };
@@ -107,9 +120,11 @@
 		FA97E8221AE62032007B28F9 /* PTKViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKViewController.m; sourceTree = "<group>"; };
 		FA97E8251AE63272007B28F9 /* PTKTweetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKTweetCell.h; sourceTree = "<group>"; };
 		FA97E8261AE63272007B28F9 /* PTKTweetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKTweetCell.m; sourceTree = "<group>"; };
-		FA97E8291AE64857007B28F9 /* PtkTweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PtkTweetCell.xib; sourceTree = "<group>"; };
+		FA97E8291AE64857007B28F9 /* PTKTweetCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PTKTweetCell.xib; sourceTree = "<group>"; };
 		FA97E82B1AE65B0F007B28F9 /* PTKTwitterAttributedText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKTwitterAttributedText.h; sourceTree = "<group>"; };
 		FA97E82C1AE65B0F007B28F9 /* PTKTwitterAttributedText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKTwitterAttributedText.m; sourceTree = "<group>"; };
+		FAE8CB9B1B010EDD00E0411A /* PTKTwitterDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PTKTwitterDatabaseManager.h; sourceTree = "<group>"; };
+		FAE8CB9C1B010EDD00E0411A /* PTKTwitterDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PTKTwitterDatabaseManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +132,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA349D951B12659D00561BA3 /* libsqlite3.dylib in Frameworks */,
+				FA349D931B12659700561BA3 /* libsqlite3.0.dylib in Frameworks */,
 				FA97E8051AE4413B007B28F9 /* Security.framework in Frameworks */,
 				B8D07FE6418443B776B72FF7 /* libPods.a in Frameworks */,
 			);
@@ -144,10 +161,23 @@
 		9DA1300A96FC4324C271202C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA349D941B12659D00561BA3 /* libsqlite3.dylib */,
+				FA349D921B12659700561BA3 /* libsqlite3.0.dylib */,
 				FA97E8041AE4413B007B28F9 /* Security.framework */,
 				7ECB18610781CF3733B73A6E /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA349D8E1B1227B200561BA3 /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				FA349D871B0DE13500561BA3 /* UIColor+ToString.h */,
+				FA349D881B0DE13500561BA3 /* UIColor+ToString.m */,
+				FA349D8B1B121FBF00561BA3 /* NSDate+ToString.h */,
+				FA349D8C1B121FBF00561BA3 /* NSDate+ToString.m */,
+			);
+			name = Additions;
 			sourceTree = "<group>";
 		};
 		FA70A5461AE6D65B00EC6B4C /* PTKTwitterApiManager */ = {
@@ -195,6 +225,7 @@
 		FA97E6ED1ADF042C007B28F9 /* TwitterApp */ = {
 			isa = PBXGroup;
 			children = (
+				FA349D8E1B1227B200561BA3 /* Additions */,
 				FA97E7831AE18961007B28F9 /* TwitterSDK */,
 				FA97E8241AE63013007B28F9 /* UIPart */,
 				FA97E6F21ADF042C007B28F9 /* PTKAppDelegate.h */,
@@ -211,6 +242,7 @@
 		FA97E6EE1ADF042C007B28F9 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FA349D961B1326F100561BA3 /* test.sqlite */,
 				FA97E6FB1ADF042C007B28F9 /* Main.storyboard */,
 				FA97E6FE1ADF042C007B28F9 /* Images.xcassets */,
 				FA97E7001ADF042C007B28F9 /* LaunchScreen.xib */,
@@ -241,6 +273,7 @@
 		FA97E7831AE18961007B28F9 /* TwitterSDK */ = {
 			isa = PBXGroup;
 			children = (
+				FAE8CB971B010EA700E0411A /* PTKTwitterDatabaseManager */,
 				FA97E78F1AE24FBA007B28F9 /* Additions */,
 				FA70A5461AE6D65B00EC6B4C /* PTKTwitterApiManager */,
 				FA97E8121AE5963D007B28F9 /* PTKObjects */,
@@ -334,11 +367,20 @@
 		FA97E8281AE646A8007B28F9 /* PTKTweetCell */ = {
 			isa = PBXGroup;
 			children = (
-				FA97E8291AE64857007B28F9 /* PtkTweetCell.xib */,
+				FA97E8291AE64857007B28F9 /* PTKTweetCell.xib */,
 				FA97E8251AE63272007B28F9 /* PTKTweetCell.h */,
 				FA97E8261AE63272007B28F9 /* PTKTweetCell.m */,
 			);
 			name = PTKTweetCell;
+			sourceTree = "<group>";
+		};
+		FAE8CB971B010EA700E0411A /* PTKTwitterDatabaseManager */ = {
+			isa = PBXGroup;
+			children = (
+				FAE8CB9B1B010EDD00E0411A /* PTKTwitterDatabaseManager.h */,
+				FAE8CB9C1B010EDD00E0411A /* PTKTwitterDatabaseManager.m */,
+			);
+			name = PTKTwitterDatabaseManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -423,9 +465,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA349D971B13271300561BA3 /* test.sqlite in Resources */,
 				FA97E6FD1ADF042C007B28F9 /* Main.storyboard in Resources */,
 				FA97E7981AE2AB58007B28F9 /* PTKWebViewController.xib in Resources */,
-				FA97E82A1AE64857007B28F9 /* PtkTweetCell.xib in Resources */,
+				FA97E82A1AE64857007B28F9 /* PTKTweetCell.xib in Resources */,
 				FA97E7021ADF042C007B28F9 /* LaunchScreen.xib in Resources */,
 				FA97E6FF1ADF042C007B28F9 /* Images.xcassets in Resources */,
 			);
@@ -490,9 +533,11 @@
 				FA97E8031AE426DE007B28F9 /* PTKURLParser.m in Sources */,
 				FA97E7921AE24FF7007B28F9 /* NSMutableURLRequest+HTTPMethod.m in Sources */,
 				FA70A5541AE827F600EC6B4C /* JSONModelTransformerCategory.m in Sources */,
+				FA349D8D1B121FBF00561BA3 /* NSDate+ToString.m in Sources */,
 				FA97E8211AE61A09007B28F9 /* PTKURLDataCacher.m in Sources */,
 				FA97E8111AE57546007B28F9 /* PTKUniqueMutableArray.m in Sources */,
 				FA97E79B1AE2DAA1007B28F9 /* PTKTwitterUIManager.m in Sources */,
+				FAE8CB9D1B010EDD00E0411A /* PTKTwitterDatabaseManager.m in Sources */,
 				FA97E8081AE44CEA007B28F9 /* PTKErrorHandler.m in Sources */,
 				FA97E6F11ADF042C007B28F9 /* main.m in Sources */,
 				FA97E7B31AE404D9007B28F9 /* PTKTweet.m in Sources */,
@@ -501,6 +546,7 @@
 				FA97E8271AE63272007B28F9 /* PTKTweetCell.m in Sources */,
 				FA97E7951AE2A8EF007B28F9 /* PTKWebViewController.m in Sources */,
 				FA97E78C1AE2445F007B28F9 /* PTKTwitterApiManager.m in Sources */,
+				FA349D891B0DE13500561BA3 /* UIColor+ToString.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,6 +674,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TwitterApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -639,6 +686,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TwitterApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

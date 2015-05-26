@@ -16,4 +16,7 @@
 - (UIColor *)UIColorFromNSString:(NSString *)string;
 - (id)JSONObjectFromUIColor:(UIColor *)color;
 
+- (NSDate *)NSDateFromNSString:(NSString *)string;
+- (id)JSONObjectFromNSDate:(NSDate *)date;
+
 @end

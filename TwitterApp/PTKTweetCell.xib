@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7525" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7516"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -21,13 +21,13 @@
                             <constraint firstAttribute="width" secondItem="tgX-ov-cG0" secondAttribute="height" multiplier="1:1" id="oxc-up-lkT"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qek-sh-tRS">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qek-sh-tRS">
                         <rect key="frame" x="56" y="22" width="341" height="69"/>
                         <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUO-Jj-fUJ">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUO-Jj-fUJ">
                         <rect key="frame" x="56" y="8" width="341" height="14"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="14" id="2x6-x9-llv"/>
@@ -60,9 +60,9 @@
                 </variation>
             </tableViewCellContentView>
             <connections>
-                <outlet property="retweetLabel" destination="oUO-Jj-fUJ" id="fuy-pn-jP4"/>
                 <outlet property="tweetTextLabel" destination="qek-sh-tRS" id="v0m-8p-lje"/>
                 <outlet property="userIconImageView" destination="tgX-ov-cG0" id="f0b-Ug-nYi"/>
+                <outlet property="userNameLabel" destination="oUO-Jj-fUJ" id="EDU-5I-LD6"/>
             </connections>
             <point key="canvasLocation" x="371.5" y="253"/>
         </tableViewCell>
@@ -129,9 +129,9 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="mediaContentImageView" destination="pii-1V-iHS" id="b7n-1p-WK0"/>
-                <outlet property="retweetLabel" destination="Pnb-3U-IFX" id="Ieg-mv-wFc"/>
                 <outlet property="tweetTextLabel" destination="X0u-cN-8wv" id="joG-cR-85S"/>
                 <outlet property="userIconImageView" destination="E79-6w-bhD" id="uaz-8p-o0q"/>
+                <outlet property="userNameLabel" destination="Pnb-3U-IFX" id="9xz-1F-X5T"/>
             </connections>
             <point key="canvasLocation" x="337.5" y="601.5"/>
         </tableViewCell>

@@ -12,6 +12,8 @@
 
 #import "PTKTwitterApiManager.h"
 #import "PTKTwitterUIManager.h"
+#import "PTKTwitterDatabaseManager.h"
+
 #import "PTKUniqueMutableArray.h"
 
 
@@ -22,6 +24,7 @@ static NSInteger const tweetsRequestBlockCount = 20;
 
 @property (nonatomic, strong, readonly) PTKTwitterApiManager *apiManager;
 @property (nonatomic, strong, readonly) PTKTwitterUIManager *uiManager;
+@property (nonatomic, strong, readonly) PTKTwitterDatabaseManager *databaseManager;
 
 @property (nonatomic, copy) void (^authorizationCallback)(BOOL, NSError*);
 
@@ -39,8 +42,7 @@ static NSInteger const tweetsRequestBlockCount = 20;
     
     static dispatch_once_t PTKTwitterSharedManagerDispatchToken;
     dispatch_once(&PTKTwitterSharedManagerDispatchToken, ^{
-            sharedInstance = [[super alloc] initSharedInstance];
-        sharedInstance->_tweets = [PTKUniqueMutableArray new];
+        sharedInstance = [[super alloc] initSharedInstance];
     });
 
     return sharedInstance;
@@ -51,6 +53,7 @@ static NSInteger const tweetsRequestBlockCount = 20;
     if (self != nil) {
         _apiManager = [PTKTwitterApiManager new];
         _uiManager = [PTKTwitterUIManager new];
+        _databaseManager = [PTKTwitterDatabaseManager sharedManager];
     }
     return self;
 }
@@ -134,7 +137,14 @@ static NSInteger const tweetsRequestBlockCount = 20;
                                       withCount:count
                                     andCallback:^(BOOL success, NSArray *tweets, NSError *error) {
                                         if (success && tweets != nil) {
+                                            if (self.tweets == nil) {
+                                                NSArray *allLocalTweets = [self.databaseManager allTweets];
+                                                self.tweets = [[PTKUniqueMutableArray alloc] initWithArray:allLocalTweets];
+                                            }
+                                            
                                             [self.tweets addToFrontObjectsFromArray:tweets];
+                                            
+                                            [self.databaseManager saveTweets:tweets];
                                             callback(YES, nil);
                                         } else {
                                             callback(NO, error);
@@ -155,6 +165,8 @@ static NSInteger const tweetsRequestBlockCount = 20;
                                             [self.tweets addObjectsFromArray:tweets];
                                             NSInteger newCount = self.tweets.count;
                                             _canTryLoadMore = (newCount - lastCount) > 0;
+                                            
+                                            [self.databaseManager saveTweets:tweets];
                                             callback(YES, nil);
                                         } else {
                                             callback(NO, error);

@@ -22,6 +22,10 @@
     return self;
 }
 
+- (id)initWithCapacity:(NSUInteger)numItems {
+    return [self init];
+}
+
 - (void)addObject:(id)anObject {
     if ([self indexOfObject:anObject] == NSNotFound) {
         [self->_array addObject:anObject];

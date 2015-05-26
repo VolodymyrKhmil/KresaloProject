@@ -1,4 +1,42 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <elements/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="7535.1" systemVersion="14D136" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Entities" syncable="YES">
+        <relationship name="hashtags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="HashTag" syncable="YES"/>
+        <relationship name="media" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Media" syncable="YES"/>
+        <relationship name="url" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="URL" syncable="YES"/>
+    </entity>
+    <entity name="HashTag" syncable="YES">
+        <attribute name="indices" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Media" syncable="YES">
+        <attribute name="media_url" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Tweet" syncable="YES">
+        <attribute name="created_at" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="entities" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Entities" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="URL" syncable="YES">
+        <attribute name="display_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="expanded_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="indices" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
+    <entity name="User" syncable="YES">
+        <attribute name="created_at" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="favourites_count" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="profile_image_url" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profile_link_color" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profile_text_color" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Tweet" positionX="-261" positionY="-252" width="128" height="118"/>
+        <element name="Media" positionX="117" positionY="-432" width="128" height="58"/>
+        <element name="Entities" positionX="-36" positionY="-268" width="128" height="88"/>
+        <element name="User" positionX="-243" positionY="-34" width="128" height="118"/>
+        <element name="URL" positionX="205" positionY="-229" width="128" height="88"/>
+        <element name="HashTag" positionX="9" positionY="-64" width="128" height="73"/>
+    </elements>
 </model>

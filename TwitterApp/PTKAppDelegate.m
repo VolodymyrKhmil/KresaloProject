@@ -7,12 +7,12 @@
 //
 
 #import "PTKAppDelegate.h"
+#import "FMDB.h"
 
 @implementation PTKAppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
     return YES;
 }
 

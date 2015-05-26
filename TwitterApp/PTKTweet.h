@@ -13,6 +13,7 @@
 
 @interface PTKTweet : JSONModel <NSCopying>
 
+@property (nonatomic, strong) NSDate *created_at;
 @property (nonatomic, strong) NSString *text;
 @property (nonatomic, strong) NSNumber *id;
 @property (nonatomic, strong) PTKEntities *entities;
