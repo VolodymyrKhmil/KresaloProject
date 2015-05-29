@@ -16,9 +16,10 @@
 
 @property (nonatomic, readonly) PTKTweet *tweet;
 
-@property (nonatomic, readonly) CGFloat preferedHeight;
 
 
 - (instancetype)initWithTweet:(PTKTweet *)tweet;
+
++ (CGFloat)preferedHeightForTweet:(PTKTweet *)tweet;
 
 @end

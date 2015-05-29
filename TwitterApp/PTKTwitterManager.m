@@ -131,16 +131,19 @@ static NSInteger const tweetsRequestBlockCount = 20;
 
 #pragma mark tweets updating
 - (void)updateTweetsWithCallback:(void (^)(BOOL, NSError *))callback {
+    NSDate *start = [NSDate date];
+    if (self.tweets == nil) {
+        NSArray *allLocalTweets = [self.databaseManager allTweets];
+        self.tweets = [[PTKUniqueMutableArray alloc] initWithArray:allLocalTweets];
+    }
+    
+    
     PTKTweet *lastTweet = self.tweets.firstObject;
     NSNumber *count = lastTweet == nil ? @(tweetsRequestBlockCount) : nil;
     [self.apiManager requestTweetsSinceLastTweet:lastTweet
                                       withCount:count
                                     andCallback:^(BOOL success, NSArray *tweets, NSError *error) {
                                         if (success && tweets != nil) {
-                                            if (self.tweets == nil) {
-                                                NSArray *allLocalTweets = [self.databaseManager allTweets];
-                                                self.tweets = [[PTKUniqueMutableArray alloc] initWithArray:allLocalTweets];
-                                            }
                                             
                                             [self.tweets addToFrontObjectsFromArray:tweets];
                                             

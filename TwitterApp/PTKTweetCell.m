@@ -46,8 +46,8 @@
     return [PTKURLDataCacher defaultCacher];
 }
 
-- (CGFloat)preferedHeight {
-    return self.bounds.size.height;
++ (CGFloat)preferedHeightForTweet:(PTKTweet *)tweet {
+    return tweet.entities.media == nil ? [PTKSimpleTweetCell preferedHeightForTweet:tweet] : [PTKMediaTweetCell preferedHeightForTweet:tweet];
 }
 
 
@@ -97,10 +97,18 @@
 
 @implementation PTKSimpleTweetCell
 
++ (CGFloat)preferedHeightForTweet:(PTKTweet *)tweet {
+    return 100;
+}
+
 @end
 
 
 @implementation PTKMediaTweetCell
+
++ (CGFloat)preferedHeightForTweet:(PTKTweet *)tweet {
+    return 300;
+}
 
 - (void)setMedia {
     NSArray *media = self.tweet.entities.media;

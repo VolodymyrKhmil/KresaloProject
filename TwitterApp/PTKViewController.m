@@ -109,8 +109,7 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    PTKTweetCell *cell = (PTKTweetCell *)[self tableView:tableView cellForRowAtIndexPath:indexPath];
-    return cell.preferedHeight;
+    return [PTKTweetCell preferedHeightForTweet:[self.twitterManager twittAtIndex:indexPath.row]];
 }
 
 #pragma mark table view delegate

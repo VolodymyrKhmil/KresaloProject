@@ -48,7 +48,6 @@ static NSString * const PTKDatabaseType = @"sqlite";
     NSString *dbPath   = [docsPath stringByAppendingPathComponent:[NSString stringWithFormat:@"%@.%@",
                                                                    PTKDatabaseName,
                                                                    PTKDatabaseType]];
-    [[NSFileManager defaultManager] removeItemAtPath:dbPath error:nil];
     if (![[NSFileManager defaultManager] fileExistsAtPath:dbPath isDirectory:false]) {
         NSString *bundleDBPath = [[NSBundle mainBundle] pathForResource:PTKDatabaseName ofType:PTKDatabaseType];
         [[NSFileManager defaultManager] copyItemAtPath:bundleDBPath toPath:dbPath error:nil];
