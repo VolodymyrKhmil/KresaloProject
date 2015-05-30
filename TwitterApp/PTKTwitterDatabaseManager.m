@@ -14,6 +14,10 @@
 static NSString * const PTKDatabaseName = @"test";
 static NSString * const PTKDatabaseType = @"sqlite";
 
+static int const PTKMaxNumberOfTweets = 100;
+
+
+
 @interface PTKTwitterDatabaseManager ()
 
 @property (nonatomic, strong) FMDatabase *database;
@@ -67,6 +71,9 @@ static NSString * const PTKDatabaseType = @"sqlite";
 
 - (void)saveTweet:(PTKTweet *)tweet {
     if ([self.database open]) {
+        if ([self databaseIsFull]) {
+            [self deleteLastTweet];
+        }
         if (![self tweetAlreadyExistInTable:tweet]) {
             [self insertTweet:tweet];
         }
@@ -79,6 +86,70 @@ static NSString * const PTKDatabaseType = @"sqlite";
     FMResultSet *resultSet = [self.database executeQuery:sqlSL];
     return [resultSet next];
 }
+
+- (BOOL)databaseIsFull {
+    NSString *sqlSL = @"COUNT * FROM Tweet";
+    FMResultSet *resultSet = [self.database executeQuery:sqlSL];
+    if ([resultSet next]) {
+        return [resultSet intForColumnIndex:0] > PTKMaxNumberOfTweets;
+    }
+    return true;
+}
+
+- (void)deleteLastTweet {
+    NSArray *allTweets = [self allTweets];
+    
+    [self deleteTweet:allTweets.lastObject];
+}
+
+#pragma  mark deleting methods
+
+- (void)deleteTweet:(PTKTweet *)tweet {
+    NSString *sqlSL = [NSString stringWithFormat:@"DELETE FROM Tweet WHERE id = %li;", tweet.id.integerValue];
+    [self.database executeUpdate:sqlSL];
+    
+    [self deleteUserWithTweetPK:tweet.id.integerValue];
+    [self deleteEntitiesWithTweetPK:tweet.id.integerValue];
+}
+
+- (void)deleteUserWithTweetPK:(NSInteger)tweetPK {
+    NSString *sqlSL = [NSString stringWithFormat:@"DELETE FROM User WHERE user_tweet = %li;", (long)tweetPK];
+    [self.database executeUpdate:sqlSL];
+}
+
+- (void)deleteEntitiesWithTweetPK:(NSInteger)tweetPK {
+    NSString *entitiesPKSqlSL = [NSString stringWithFormat:@"SELECT entities_id FROM Entities WHERE entities_tweet = %li;", tweetPK];
+    
+    FMResultSet *entitiesPKResultSet = [self.database executeQuery:entitiesPKSqlSL];
+    
+    if ([entitiesPKResultSet next]) {
+        NSInteger entitiesPK = [entitiesPKResultSet intForColumnIndex:0];
+        NSString *sqlSL = [NSString stringWithFormat:@"DELETE FROM Entities WHERE entities_tweet = %li;", tweetPK];
+        [self.database executeUpdate:sqlSL];
+        
+        [self deleteMediaWithEntitiesPK:entitiesPK];
+        [self deleteURLsWithEntitiesPK:entitiesPK];
+        [self deleteHashTagsWithEntitiesPK:entitiesPK];
+    }
+    
+}
+
+- (void)deleteMediaWithEntitiesPK:(NSInteger)entitiesPK {
+    NSString *sqlSL = [NSString stringWithFormat:@"DELETE FROM Media WHERE media_entities = %li;", entitiesPK];
+    [self.database executeUpdate:sqlSL];
+}
+
+- (void)deleteURLsWithEntitiesPK:(NSInteger)entitiesPK {
+    NSString *sqlSL = [NSString stringWithFormat:@"DELETE FROM URL WHERE url_entities = %li;", entitiesPK];
+    [self.database executeUpdate:sqlSL];
+}
+
+- (void)deleteHashTagsWithEntitiesPK:(NSInteger)entitiesPK {
+    NSString *sqlSL = [NSString stringWithFormat:@"DELETE FROM HashTag WHERE hashtag_entities = %li;", entitiesPK];
+    [self.database executeUpdate:sqlSL];
+}
+
+#pragma mark inserting methods
 
 - (void)insertTweet:(PTKTweet *)tweet {
     NSString *text      = tweet.text;
